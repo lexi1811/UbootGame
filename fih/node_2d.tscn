@@ -35,4 +35,5 @@ script = ExtResource("6_d21ai")
 wait_time = 2.488
 autostart = true
 
+[connection signal="timeout" from="U-Boot/Timer" to="U-Boot" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

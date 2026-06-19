@@ -3,11 +3,14 @@ var speed = 30
 var delta = 20
 
 var row = 0
+var timeout = false
 
 # Hier laden wir die Bild-Szene, die wir oben erstellt haben
 @export var taurus: PackedScene = preload("res://taurus.tscn")
 
-
+func _on_timer_timeout() -> void:
+	timeout = false
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -24,8 +27,18 @@ func _process(delta: float) -> void:
 		if row > 0:
 			row -= 1
 	
-	if Input.is_action_just_pressed("fire_taurus"):
-
+	if Input.is_action_pressed("fire_taurus"):
+		
+		print(timeout)
+		
+		if timeout:
+			return			
+		
+		$Timer.start()
+		
+		timeout = true
+		
+		
 		var new_taurus = taurus.instantiate()
 		
 		# 2. Dem Bild die aktuelle Position des Spawners geben
