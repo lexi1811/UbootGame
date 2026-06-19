@@ -59,6 +59,7 @@ Durch Upgrades kann die Geschwindigkeit und Kampfkraft erhöht werden.
    a) Gegner getötet
    b) Spieler stirbt
 9. optional: NPCs??
+10. nachladebalken
 
 ##### submarine view
 1. Spielerfigur: Katze?
@@ -69,6 +70,10 @@ Durch Upgrades kann die Geschwindigkeit und Kampfkraft erhöht werden.
    c) Sonar
    b) Motor
 4. Lebensanzeigen/Balken für Reperatursachen (kann man auch Programmatisch machen)
+5. 10. Pfütze?
+6. Rote Warnleuchte (man ist langsamer)
+7. Wasser läuft rein
+
 
 ##### Menü
 
@@ -92,6 +97,7 @@ Durch Upgrades kann die Geschwindigkeit und Kampfkraft erhöht werden.
 3. wenn man stirbt
 4. Bosskampf Musik
 5. Wenn etwas kaputt geht -> sound
+6. nachladen, wenn wieder ready ist?
 
 
 
