@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://diac5q40bd3jm"]
+
+[ext_resource type="Texture2D" uid="uid://b54jflx2ixu1x" path="res://taurus.jpg" id="1_sepw0"]
+[ext_resource type="Script" uid="uid://ck5kuoq6ppyvt" path="res://taurus.gd" id="2_ecngg"]
+
+[node name="Taurus" type="Sprite2D" unique_id=1070159643]
+scale = Vector2(0.041333333, 0.03716215)
+texture = ExtResource("1_sepw0")
+script = ExtResource("2_ecngg")
