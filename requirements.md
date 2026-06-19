@@ -1,5 +1,22 @@
 # Deep Dive - Requirements
 
+### Main Menu
+
+- Im Main Menu kann das Spiel gestartet werden
+- Im Main Menu kann in die Optionen gewechselt werden
+- Im Main Menu kann das Spiel verlassen werden
+- Das Main Menu zeigt das Logo (den Titel) des Spiels an
+
+- Optional: Es wird ein Scoreboard angezeigt
+
+### Optionen
+- Die Lautstärke der Musik kann angepasst werden
+- Die Lautstärke der SFX kann angepasst werden
+- Die Lautstärke kann in einem Bereich von 0 bis 100 Prozent eingestellt werden
+
+- Man kann Vollbild oder Fenstermodus auswählen
+
+
 ### Underwater View
 - Gegner abzuschießen bringt Punkte
 
@@ -10,6 +27,8 @@
 - HP werden als Symbole (Herzen) auf dem Screen angezeigt
 
 - Später im Spielverlauf gibt es die Möglichkeit, die maximale anzahl an hp permanent mit power-ups zu erhöhen
+
+- Es gibt einen Indikator (Ladebalken) wann Torpedos bereit sind
 
 - Optional: Mini-Boss nach einer gewissen Zeit
 - Optional: Special Gegner, der leuchtet und nur sehr schnell an dir Vorbeiziehen will. Beim Kill gibt es Punkte x10 
@@ -42,9 +61,18 @@
 
 - Ab < 50 % HP des Motors nimmt die Bewegungsgeschwindigkeit des U-Boots entsprechend der HP-Bar des Motors ab 
 
+- Um eine Reparatur durchzuführen, muss man ein kleines Minigame absolvieren (Zufällige Tastenkombi aus WASD, etc.)
+
+
+
 - Optional: Anwesenheit des Ingenieurs im Sektor der Fähigkeit gibt einen Boost für die Fähigkeit
 
 - Optional: Zufällig (5% Chance), das U-Boot ein Leck hat, was repariert werden muss
+
+- Optional: Der Engineer kann sich alle 120 Sekunden am Wasserspender erfrischen,
+  um einen Boost von +100 % auf alle Fähigkeiten zu erhalten
+
+- Optional: Der Wasserspender hat ein WSP-Logo
 
 ### Extras
 
