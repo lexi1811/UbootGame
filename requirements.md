@@ -5,9 +5,15 @@
 
 - Gegnern auszuweichen birgt keine Nachteile
 
+- Das U-Boot hat zu beginn 3 HP (Leben)
+
+- HP werden als Symbole (Herzen) auf dem Screen angezeigt
+
+- Später im Spielverlauf gibt es die Möglichkeit, die maximale anzahl an hp permanent mit power-ups zu erhöhen
+
 - Optional: Mini-Boss nach einer gewissen Zeit
 - Optional: Special Gegner, der leuchtet und nur sehr schnell an dir Vorbeiziehen will. Beim Kill gibt es Punkte x10 
-- Optional: Power-Ups spawnen zufällig
+- Optional: Power-Ups spawnen zufällig (schneller schießen, temp mehr hp, unverwundbarkeit, etc. ) 
 
 ### Submarine View
 
