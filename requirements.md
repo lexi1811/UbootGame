@@ -34,6 +34,7 @@
 - Optional: Special Gegner, der leuchtet und nur sehr schnell an dir Vorbeiziehen will. Beim Kill gibt es Punkte x10 
 - Optional: Power-Ups spawnen zufällig (schneller schießen, temp mehr hp, unverwundbarkeit, etc. ) 
 
+
 ### Submarine View
 
 - Die Linke Seite des Screens stell den Innenraum des U-Boots dar
@@ -73,6 +74,7 @@
   um einen Boost von +100 % auf alle Fähigkeiten zu erhalten
 
 - Optional: Der Wasserspender hat ein WSP-Logo
+
 
 ### Extras
 
