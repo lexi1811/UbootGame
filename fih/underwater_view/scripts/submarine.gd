@@ -6,7 +6,7 @@ var row = 0
 var timeout = false
 
 # Hier laden wir die Bild-Szene, die wir oben erstellt haben
-@export var taurus: PackedScene = preload("res://taurus.tscn")
+@export var taurus: PackedScene = preload("res://underwater_view/scenes/taurus.tscn")
 
 func _on_timer_timeout() -> void:
 	timeout = false

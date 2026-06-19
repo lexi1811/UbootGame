@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfy7bgcebklae"]
 
-[ext_resource type="Texture2D" uid="uid://b8ym3i4dg5gsh" path="res://Hamburger wale.jpeg" id="1_fuuev"]
-[ext_resource type="Script" uid="uid://cbnxygvhndaa6" path="res://hamburger_wale.gd" id="2_ebcee"]
+[ext_resource type="Texture2D" uid="uid://b8ym3i4dg5gsh" path="res://underwater_view/assets/sprites/Hamburger wale.jpeg" id="1_fuuev"]
+[ext_resource type="Script" uid="uid://cbnxygvhndaa6" path="res://underwater_view/scripts/hamburger_wale.gd" id="2_ebcee"]
 
 [node name="HamburgerWale" type="Sprite2D" unique_id=1605667866]
 position = Vector2(-69.15625, -14.3125)
