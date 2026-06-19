@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://b3bbvn5t0sges"]
 
-[ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://underwater_view/assets/sprites/wasser oben.jpg" id="1_pkyxc"]
-[ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://underwater_view/assets/sprites/wasser unten.jpg" id="2_gse1j"]
-[ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://underwater_view/scripts/spawner.gd" id="3_qee4r"]
-[ext_resource type="Texture2D" uid="uid://qkvp4ieciceu" path="res://underwater_view/assets/sprites/uboooot.jpg" id="4_2pj0u"]
-[ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://underwater_view/scripts/submarine.gd" id="5_x7beh"]
+[ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://assets/sprites/underwater_view/wasser oben.jpg" id="1_cmbjn"]
+[ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://assets/sprites/underwater_view/wasser unten.jpg" id="2_hyrsq"]
+[ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_cmbjn"]
+[ext_resource type="Texture2D" uid="uid://qkvp4ieciceu" path="res://assets/sprites/underwater_view/uboooot.jpg" id="4_wpw2t"]
+[ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="5_hyrsq"]
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
 [node name="water_top" type="Sprite2D" parent="." unique_id=73891401]
 position = Vector2(1433.5, 130)
 scale = Vector2(0.7469231, 0.33300877)
-texture = ExtResource("1_pkyxc")
+texture = ExtResource("1_cmbjn")
 
 [node name="water_bottom" type="Sprite2D" parent="." unique_id=1459372808]
 position = Vector2(1443.2501, 746)
 scale = Vector2(0.25638026, 0.45)
-texture = ExtResource("2_gse1j")
+texture = ExtResource("2_hyrsq")
 
 [node name="enemy_spawner" type="Node2D" parent="." unique_id=2073450446]
 position = Vector2(1920, 20)
-script = ExtResource("3_qee4r")
+script = ExtResource("3_cmbjn")
 
 [node name="Timer" type="Timer" parent="enemy_spawner" unique_id=674748136]
 wait_time = 2.488
@@ -30,8 +30,8 @@ autostart = true
 z_index = 1
 position = Vector2(1050, 200)
 scale = Vector2(0.12056731, 0.28421056)
-texture = ExtResource("4_2pj0u")
-script = ExtResource("5_x7beh")
+texture = ExtResource("4_wpw2t")
+script = ExtResource("5_hyrsq")
 
 [node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
 

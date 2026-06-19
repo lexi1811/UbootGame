@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Test_Spiel"
-run/main_scene="res://underwater_view/scenes/ocean.tscn"
+run/main_scene="res://scenes/underwater_view/ocean.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
