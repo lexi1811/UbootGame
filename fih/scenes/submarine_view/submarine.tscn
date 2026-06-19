@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://053fcjjssby1"]
+
+[ext_resource type="Texture2D" uid="uid://cx3sxyqigore5" path="res://assets/sprites/submarine_view/uboot.png" id="1_jafjb"]
+
+[node name="Submarine" type="Node2D" unique_id=1643673883]
+
+[node name="Uboot" type="Sprite2D" parent="." unique_id=1326813057]
+z_index = 1
+position = Vector2(320.00003, 579.00006)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_jafjb")

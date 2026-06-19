@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjfr2nrucw27d"
-path="res://.godot/imported/uboooot.jpg-c7fcf5d7087f42437aa6e53670bd007e.ctex"
+uid="uid://cx3sxyqigore5"
+path="res://.godot/imported/uboot.png-049099c33aa09bac77f4c4b10a5f66a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/submarine_view/uboooot.jpg"
-dest_files=["res://.godot/imported/uboooot.jpg-c7fcf5d7087f42437aa6e53670bd007e.ctex"]
+source_file="res://assets/sprites/submarine_view/uboot.png"
+dest_files=["res://.godot/imported/uboot.png-049099c33aa09bac77f4c4b10a5f66a3.ctex"]
 
 [params]
 
