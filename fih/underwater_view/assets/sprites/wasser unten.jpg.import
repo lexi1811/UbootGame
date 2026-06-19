@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ngcoimu0180t"
-path="res://.godot/imported/wasser unten.jpg-842c084fa3824edce94c2a49b211684f.ctex"
+path="res://.godot/imported/wasser unten.jpg-a0daebade4d18a80f5a44788ea2b336e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wasser unten.jpg"
-dest_files=["res://.godot/imported/wasser unten.jpg-842c084fa3824edce94c2a49b211684f.ctex"]
+source_file="res://underwater_view/assets/sprites/wasser unten.jpg"
+dest_files=["res://.godot/imported/wasser unten.jpg-a0daebade4d18a80f5a44788ea2b336e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ym3i4dg5gsh"
-path="res://.godot/imported/Hamburger wale.jpeg-5170660338b9dc365aa0e6972fd9ae24.ctex"
+uid="uid://qkvp4ieciceu"
+path="res://.godot/imported/uboooot.jpg-488c6e7cc966913c101dc362156907a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hamburger wale.jpeg"
-dest_files=["res://.godot/imported/Hamburger wale.jpeg-5170660338b9dc365aa0e6972fd9ae24.ctex"]
+source_file="res://underwater_view/assets/sprites/uboooot.jpg"
+dest_files=["res://.godot/imported/uboooot.jpg-488c6e7cc966913c101dc362156907a2.ctex"]
 
 [params]
 
