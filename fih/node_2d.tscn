@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b3bbvn5t0sges"]
 
 [ext_resource type="Texture2D" uid="uid://qkvp4ieciceu" path="res://uboooot.jpg" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://icon.gd" id="2_epypp"]
+[ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://submarine.gd" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://wasser oben.jpg" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://wasser unten.jpg" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://spawner.gd" id="6_d21ai"]
 
-[node name="Node2D" type="Node2D" unique_id=135139133]
+[node name="Ocean View" type="Node2D" unique_id=135139133]
 
 [node name="U-Boot" type="Sprite2D" parent="." unique_id=1703642744]
 z_index = 1
