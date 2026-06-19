@@ -14,3 +14,20 @@
 
 
 `Torpedo für Timmy :)`
+
+# Deep Dive
+
+2 Spieler steuern gemeinsam ein U-Boot.
+
+Spieler 1 steuert das Uboot und bekämpft feindliche U-Boote.
+Spieler 2 befindet sich im Inneren des U-Boots und hält die Systeme am Laufen.
+
+Das Ziel ist noch nicht definiert: 
+1. entweder ein Ziel erreichen und möglichst hohen score oder schnell sein
+2. oder unendlich weit mitm score
+   
+Durch Kämpfe entstehen Schäden, die repariert werden müssen.
+Durch Upgrades kann die Geschwindigkeit und Kampfkraft erhöht werden.
+
+
+
