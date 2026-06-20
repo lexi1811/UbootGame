@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkvp4ieciceu"
-valid=false
+uid="uid://cbrdypqchcrmu"
+path="res://.godot/imported/explosion.png-5e0babb0117c28a9852b80358b609ebd.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/sprites/underwater_view/uboooot.jpg"
+source_file="res://assets/sprites/underwater_view/explosion.png"
+dest_files=["res://.godot/imported/explosion.png-5e0babb0117c28a9852b80358b609ebd.ctex"]
 
 [params]
 

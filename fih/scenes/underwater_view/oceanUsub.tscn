@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://b3bbvn5t0sges"]
+
+[ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://assets/sprites/underwater_view/wasser oben.jpg" id="1_rutms"]
+[ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://assets/sprites/underwater_view/wasser unten.jpg" id="2_m3mom"]
+[ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
+[ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="4_nqow5"]
+[ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="5_m3mom"]
+[ext_resource type="Texture2D" uid="uid://cijkwb2a2k561" path="res://assets/sprites/underwater_view/Ubootchen.png" id="6_m3mom"]
+[ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
+size = Vector2(680.1178, 190)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3r7xc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1lm"]
+size = Vector2(729.88727, 10453.517)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(172, 3143)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78gii"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqow5"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r7xc"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Ocean View" type="Node2D" unique_id=135139133]
+
+[node name="water_top" type="Sprite2D" parent="." unique_id=73891401]
+position = Vector2(640, -57.00001)
+scale = Vector2(0.99538463, 0.36514127)
+texture = ExtResource("1_rutms")
+centered = false
+
+[node name="water_bottom" type="Sprite2D" parent="." unique_id=1459372808]
+position = Vector2(640, 230)
+scale = Vector2(0.3528646, 0.48564816)
+texture = ExtResource("2_m3mom")
+centered = false
+
+[node name="enemy_spawner" type="Node2D" parent="." unique_id=2073450446]
+position = Vector2(1920, 20)
+script = ExtResource("3_78gii")
+
+[node name="Timer" type="Timer" parent="enemy_spawner" unique_id=674748136]
+wait_time = 2.488
+autostart = true
+
+[node name="submarine" type="Area2D" parent="." unique_id=149659679]
+z_index = 1
+position = Vector2(750, 200.99998)
+scale = Vector2(0.12056731, 0.28421056)
+script = ExtResource("4_nqow5")
+taurus_scene = ExtResource("5_m3mom")
+
+[node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1173671757]
+position = Vector2(-84.441, 1.7824249)
+scale = Vector2(0.60239667, 0.19641857)
+texture = ExtResource("6_m3mom")
+
+[node name="CollisionSubmarine" type="CollisionShape2D" parent="submarine" unique_id=1598191945]
+position = Vector2(-82.93994, 6.1035156e-05)
+shape = SubResource("RectangleShape2D_rutms")
+
+[node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
+physics_material_override = SubResource("PhysicsMaterial_3r7xc")
+
+[node name="CollisionLeftBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=1206046396 groups=["leftBorder"]]
+position = Vector2(605, 561.5001)
+scale = Vector2(0.12056731, 0.28421056)
+shape = SubResource("RectangleShape2D_mv1lm")
+
+[node name="CollisionRightBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=901157907 groups=["rightBorder"]]
+position = Vector2(2207, 434.5)
+shape = SubResource("RectangleShape2D_3r7xc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1734407509]
+script = ExtResource("7_78gii")
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=733556234]
+offset_left = 661.0
+offset_top = 20.0
+offset_right = 903.0
+offset_bottom = 78.0
+theme_override_styles/background = SubResource("StyleBoxFlat_78gii")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nqow5")
+max_value = 5.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="AmmoCount" type="ProgressBar" parent="CanvasLayer" unique_id=529066055]
+offset_left = 1322.0
+offset_top = 40.0
+offset_right = 1564.0
+offset_bottom = 98.0
+theme_override_styles/background = SubResource("StyleBoxFlat_78gii")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3r7xc")
+max_value = 5.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]

@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkvp4ieciceu"
-valid=false
+uid="uid://cijkwb2a2k561"
+path="res://.godot/imported/Ubootchen.png-79bb8949f3ff7a1683f2a10df7a98f4b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/sprites/underwater_view/uboooot.jpg"
+source_file="res://assets/sprites/underwater_view/Ubootchen.png"
+dest_files=["res://.godot/imported/Ubootchen.png-79bb8949f3ff7a1683f2a10df7a98f4b.ctex"]
 
 [params]
 
