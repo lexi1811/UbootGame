@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bye0v7q7pbquo"]
+
+[ext_resource type="Script" uid="uid://bjfiiycufqvwr" path="res://scripts/underwater_view/shark.gd" id="1_7bkay"]
+[ext_resource type="Texture2D" uid="uid://cycnk6k0baihk" path="res://assets/sprites/underwater_view/very_evil_shark.png" id="2_ewdrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuby0"]
+size = Vector2(210, 93)
+
+[node name="shark" type="CharacterBody2D" unique_id=1754415973]
+position = Vector2(-4, -7)
+script = ExtResource("1_7bkay")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832719834]
+position = Vector2(-101.40625, 0.49999523)
+scale = Vector2(0.11965297, 0.13617608)
+texture = ExtResource("2_ewdrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1570800993]
+position = Vector2(-100, 0.5)
+shape = SubResource("RectangleShape2D_nuby0")

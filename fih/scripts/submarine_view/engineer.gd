@@ -60,7 +60,7 @@ func _enter_weapon(body: Node2D) -> void:
 	print("signal weapon")
 	current_room = rooms.WEAPON
 
-func _enter_reload(body: Node2D) -> void:
+func _enter_reload(_body: Node2D) -> void:
 	print("signal reload")
 	current_room = rooms.RELOAD
 
