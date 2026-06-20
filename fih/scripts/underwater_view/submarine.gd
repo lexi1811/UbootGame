@@ -128,7 +128,7 @@ func _on_system_fixed(system: global_enums.System) -> void:
 		print("U-Boot-System: Waffen sind wieder einsatzbereit!")
 
 func _on_game_over() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_over/game_over.tscn")
-
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over/game_over.tscn")
+	
 func _on_timer_timeout() -> void:
 	timeout = false
