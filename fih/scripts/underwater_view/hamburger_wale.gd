@@ -1,11 +1,14 @@
-extends Sprite2D
+extends CharacterBody2D
 
+@export var speed: float = 200.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+# richtung
+var direction: Vector2 = Vector2(-1, 0)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	position.x -= 3
+func _physics_process(delta: float) -> void:	
+	velocity = direction * speed
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		#print("I collided with ", collision.get_collider().name)
+		queue_free()

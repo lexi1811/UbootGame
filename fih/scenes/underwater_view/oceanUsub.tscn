@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b3bbvn5t0sges"]
+
+[ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://assets/sprites/underwater_view/wasser oben.jpg" id="1_rutms"]
+[ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://assets/sprites/underwater_view/wasser unten.jpg" id="2_m3mom"]
+[ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
+[ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="4_nqow5"]
+[ext_resource type="Texture2D" uid="uid://qkvp4ieciceu" path="res://assets/sprites/underwater_view/uboooot.jpg" id="5_ki0f0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
+size = Vector2(846.00134, 190)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3r7xc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1lm"]
+size = Vector2(729.88727, 10453.517)
+
+[node name="Ocean View" type="Node2D" unique_id=135139133]
+
+[node name="water_top" type="Sprite2D" parent="." unique_id=73891401]
+position = Vector2(640, -57.00001)
+scale = Vector2(0.99538463, 0.36514127)
+texture = ExtResource("1_rutms")
+centered = false
+
+[node name="water_bottom" type="Sprite2D" parent="." unique_id=1459372808]
+position = Vector2(640, 230)
+scale = Vector2(0.3528646, 0.48564816)
+texture = ExtResource("2_m3mom")
+centered = false
+
+[node name="enemy_spawner" type="Node2D" parent="." unique_id=2073450446]
+position = Vector2(1920, 20)
+script = ExtResource("3_78gii")
+
+[node name="Timer" type="Timer" parent="enemy_spawner" unique_id=674748136]
+wait_time = 2.488
+autostart = true
+
+[node name="submarine" type="Area2D" parent="." unique_id=149659679]
+z_index = 1
+position = Vector2(750, 200.99998)
+scale = Vector2(0.12056731, 0.28421056)
+script = ExtResource("4_nqow5")
+
+[node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1173671757]
+texture = ExtResource("5_ki0f0")
+
+[node name="CollisionSubmarine" type="CollisionShape2D" parent="submarine" unique_id=1598191945]
+position = Vector2(0.00048828125, 6.1035156e-05)
+shape = SubResource("RectangleShape2D_rutms")
+
+[node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
+physics_material_override = SubResource("PhysicsMaterial_3r7xc")
+
+[node name="CollisionLeftBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=1206046396]
+position = Vector2(605, 561.5001)
+scale = Vector2(0.12056731, 0.28421056)
+shape = SubResource("RectangleShape2D_mv1lm")
+
+[connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]

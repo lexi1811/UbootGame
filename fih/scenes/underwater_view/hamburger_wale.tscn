@@ -3,9 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://b8ym3i4dg5gsh" path="res://assets/sprites/underwater_view/Hamburger wale.jpeg" id="1_fuuev"]
 [ext_resource type="Script" uid="uid://cbnxygvhndaa6" path="res://scripts/underwater_view/hamburger_wale.gd" id="2_ebcee"]
 
-[node name="HamburgerWale" type="Sprite2D" unique_id=1605667866]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmmen"]
+size = Vector2(1210.2195, 790.99036)
+
+[node name="HamburgerWale" type="CharacterBody2D" unique_id=1328869683]
 position = Vector2(-69.15625, -14.3125)
 scale = Vector2(0.11237633, 0.048041046)
+script = ExtResource("2_ebcee")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1198896657]
 texture = ExtResource("1_fuuev")
 flip_h = true
-script = ExtResource("2_ebcee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1829228778]
+position = Vector2(1.3904419, 6.5047913)
+scale = Vector2(0.9999995, 0.9999998)
+shape = SubResource("RectangleShape2D_jmmen")

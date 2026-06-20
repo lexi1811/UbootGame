@@ -1,11 +1,23 @@
-extends Sprite2D
+extends CharacterBody2D
 
+@export var speed: float = 300.0
+@export var explo_scene: PackedScene = preload("res://scenes/underwater_view/explosion.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+# richtung
+var direction: Vector2 = Vector2(1, 0)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	position.x += 2 
+func _physics_process(delta: float) -> void:	
+	velocity = direction * speed
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		var hit_object = collision.get_collider()
+		hit_object.queue_free()
+		
+		var new_explosion = explo_scene.instantiate()
+		new_explosion.global_position = global_position
+		new_explosion.global_position.x += 200
+		get_parent().add_child(new_explosion)
+		get_tree().create_timer(0.7).timeout.connect(new_explosion.queue_free)
+		
+		queue_free()
