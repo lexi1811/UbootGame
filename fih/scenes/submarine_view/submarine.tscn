@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ct7qravw2u4rk" path="res://scenes/submarine_view/engineer.tscn" id="2_jafjb"]
 [ext_resource type="Script" uid="uid://dpsctfx2eowm5" path="res://scenes/submarine_view/system_destroyer.gd" id="3_nosfk"]
 [ext_resource type="Script" uid="uid://pa736jqtdvpw" path="res://scripts/submarine_view/engineer.gd" id="5_bfu6x"]
+[ext_resource type="Texture2D" uid="uid://b2u4bhako2aiu" path="res://assets/sprites/submarine_view/Meowilein_weii.png" id="5_w8qwp"]
 [ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
-[ext_resource type="Texture2D" uid="uid://dfy6xuhnqvd1i" path="res://assets/sprites/submarine_view/Cat.jpg" id="6_w8qwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evqqi"]
 size = Vector2(80.00001, 621.25024)
@@ -75,8 +75,8 @@ size = Vector2(111.875015, 288.75006)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhcc8"]
 size = Vector2(271.25, 156.87497)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p57dk"]
-radius = 19.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfu6x"]
+size = Vector2(32.520813, 30.81372)
 
 [sub_resource type="LabelSettings" id="LabelSettings_evqqi"]
 font_size = 38
@@ -230,18 +230,22 @@ collision_mask = 2
 script = ExtResource("5_bfu6x")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1316672258]
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("6_w8qwp")
+position = Vector2(-3, -9.459961)
+scale = Vector2(0.050752908, 0.050752908)
+texture = ExtResource("5_w8qwp")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1182816554]
-position = Vector2(19, 20)
-shape = SubResource("CircleShape2D_p57dk")
+position = Vector2(19.396454, 17.60785)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_bfu6x")
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=316841537]
 offset_left = -10.0
-offset_top = -27.0
+offset_top = -37.0
 offset_right = 49.0
+offset_bottom = -10.0
 metadata/_edit_use_anchors_ = true
 
 [node name="system_damaged_label" type="Label" parent="." unique_id=949724492]
