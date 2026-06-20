@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="5_m3mom"]
 [ext_resource type="Texture2D" uid="uid://cijkwb2a2k561" path="res://assets/sprites/underwater_view/Ubootchen.png" id="6_m3mom"]
 [ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
+[ext_resource type="Texture2D" uid="uid://dn0p74vnwgf3s" path="res://assets/sprites/underwater_view/progress_bg.png" id="8_ki0f0"]
+[ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="9_7o7r8"]
+[ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="10_7o7r8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
 size = Vector2(1443.1772, 425.74063)
@@ -18,15 +21,6 @@ size = Vector2(729.88727, 10453.517)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
 size = Vector2(172, 3143)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78gii"]
-bg_color = Color(1, 0.14636412, 0.10424686, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqow5"]
-bg_color = Color(0, 1, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r7xc"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
@@ -83,33 +77,30 @@ shape = SubResource("RectangleShape2D_3r7xc")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1734407509]
 script = ExtResource("7_78gii")
 
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=733556234]
-offset_left = 661.0
-offset_top = 20.0
-offset_right = 903.0
-offset_bottom = 78.0
-theme_override_styles/background = SubResource("StyleBoxFlat_78gii")
-theme_override_styles/fill = SubResource("StyleBoxFlat_nqow5")
-max_value = 5.0
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="AmmoCount" type="ProgressBar" parent="CanvasLayer" unique_id=529066055]
-offset_left = 954.0
-offset_top = 22.0
-offset_right = 1196.0
-offset_bottom = 80.0
-theme_override_styles/background = SubResource("StyleBoxFlat_78gii")
-theme_override_styles/fill = SubResource("StyleBoxFlat_3r7xc")
-max_value = 5.0
-step = 1.0
-rounded = true
-show_percentage = false
-
 [node name="Points" type="Label" parent="CanvasLayer" unique_id=214214654]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1480.0
+offset_top = 31.0
+offset_right = 1570.4348
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=397621858]
+offset_left = 676.0
+offset_top = 18.0
+offset_right = 893.0
+offset_bottom = 80.0
+max_value = 5.0
+texture_under = ExtResource("8_ki0f0")
+texture_progress = ExtResource("9_7o7r8")
+
+[node name="AmmoCount" type="TextureProgressBar" parent="CanvasLayer" unique_id=1783031375]
+offset_left = 1013.0
+offset_top = 20.0
+offset_right = 1311.0
+offset_bottom = 78.0
+max_value = 5.0
+texture_under = ExtResource("8_ki0f0")
+texture_progress = ExtResource("10_7o7r8")
 
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]

@@ -1,14 +1,21 @@
 extends CanvasLayer
 
-@onready var health_bar: ProgressBar = $HealthBar
-@onready var ammo_count: ProgressBar = $AmmoCount
+@onready var health_bar: TextureProgressBar = $HealthBar
+@onready var ammo_count: TextureProgressBar = $AmmoCount
+@onready var points: Label = $Points
 
 func _ready() -> void:
 	game_state.health_changed.connect(_on_health_changed)
 	game_state.ammo_changed.connect(_on_ammo_changed)
+	game_state.points_changed.connect(_on_points_changed)
 	
 	health_bar.value = game_state.health
 	ammo_count.value = game_state.amunition
+	points.text = "Punkte: " + str(game_state.pointsSum)
+	points.z_index = 10
+
+func _on_points_changed(pointsSum: int) -> void:
+	points.text = "Punkte: " + str(pointsSum)
 
 func _on_health_changed(new_health: int) -> void:
 	health_bar.value = new_health

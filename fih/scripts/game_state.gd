@@ -5,13 +5,18 @@ signal system_fixed(system)
 signal health_depleted
 signal health_changed(new_health)
 signal ammo_changed(new_ammo)
-
+signal points_changed(points)
 
 var system_state: Dictionary[global_enums.System, bool] = {}
 var health_max = 5
 var health = health_max
 var amunition_max = 5
 var amunition = amunition_max
+var pointsSum: int = 0
+
+func _enemy_killed(points) -> void:
+	pointsSum += points
+	points_changed.emit(pointsSum)
 
 func _ready() -> void:
 	for s in global_enums.System.values():
