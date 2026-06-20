@@ -11,9 +11,14 @@
 script = ExtResource("1_wem23")
 
 [node name="main_menu" type="MarginContainer" parent="." unique_id=926921638]
+offset_left = 384.0
+offset_top = 262.0
+offset_right = 1364.0
+offset_bottom = 1131.0
 
 [node name="main_menu" type="HBoxContainer" parent="main_menu" unique_id=1639765960]
 layout_mode = 2
+alignment = 1
 
 [node name="left" type="VBoxContainer" parent="main_menu/main_menu" unique_id=733538817]
 layout_mode = 2
@@ -45,5 +50,7 @@ texture_normal = ExtResource("4_5seab")
 layout_mode = 2
 
 [node name="MainMenu" type="Sprite2D" parent="." unique_id=716469696]
-position = Vector2(947, 518)
+z_index = -1
+position = Vector2(944.9999, 542.00006)
+scale = Vector2(1.5098039, 1.0858587)
 texture = ExtResource("6_3ovsr")
