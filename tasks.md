@@ -19,12 +19,12 @@
 ## Must Have
 
 ### Player
-- [ ] U-Boot Bewegung (hoch runter)
-- [ ] Schießen
+- [x] U-Boot Bewegung (hoch runter)
+- [x] Schießen
 - [ ] Cooldown System
 - [ ] Spieler State (Health, Geschwindigkeit)
 - [ ] Collisionkörper
-- [ ] Spieler wird getroffen
+- [x] Spieler wird getroffen
 - [ ] optional: U-Boot Bewegung (vor zurück)
 
 ### Enemies
@@ -58,28 +58,29 @@
 ## Must Have
 
 ### Player
-- [ ] Engineer Bewegung
-- [ ] Collisionkörper
+- [x] Engineer Bewegung
+- [x] Collisionkörper
 
 ### Umgebung
-- [ ] Wände mit Collisionkörper
+- [x] Wände mit Collisionkörper
 - [ ] Interaktion mit Systemen
 
 ### Systems
 - [ ] State vom System
-- [ ] Waffen-System
+- [x] Waffen-System
 - [ ] Motor-System
 - [ ] Sonar-System
 - [ ] Schild-System
+- [x] HP-System
 
 ### Repair
 - [ ] Systeme können kaputt gehen
-- [ ] Reparatur starten
+- [x] Reparatur starten
 - [ ] Reparatur-Minigames?
 
 ### Gameplay
 - [ ] Kommunikation mit GameManager
-- [ ] HP Reparatur
+- [x] HP Reparatur
 - [ ] Geschwindigkeitsreduktion bei Motorschaden
 
 ## Nice To Have
@@ -99,7 +100,7 @@
 
 ### Spieler
 
-* [ ] Spielerfigur: U-Boot
+* [x] Spielerfigur: U-Boot
 
 ### Umgebung
 
@@ -112,7 +113,7 @@
 
 ### Gegner
 
-* [ ] Normales Gegner-U-Boot
+* [x] Normales Gegner-U-Boot
 * [ ] Mini Boss
 * [ ] Kraken (geht schräg über die Map)
 
