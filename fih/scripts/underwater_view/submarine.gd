@@ -42,6 +42,8 @@ func _process(_delta: float) -> void:
 			if game_state._shoot():	
 				var new_taurus = taurus_scene.instantiate()
 				new_taurus.global_position = global_position
+				new_taurus.global_position.x += 50
+				#new_taurus.global_position.y += 10
 				get_parent().add_child(new_taurus)
 
 # wenn kollision
@@ -50,6 +52,7 @@ func _on_body_entered(body: Node2D) -> void:
 	var new_explosion = explo_scene_sub.instantiate()
 	new_explosion.global_position = global_position
 	new_explosion.global_position.x += 50
+	new_explosion.global_position.y += 20
 	new_explosion.z_index = 10
 	get_parent().add_child(new_explosion)
 

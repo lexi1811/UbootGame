@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			elif current_room == rooms.RELOAD:
 				game_state._reload()
 			elif current_room == rooms.HEALTH:
-				game_state._
+				game_state._repair_damage(1)
 			
 			
 			$ProgressBar.value = 0

@@ -35,6 +35,7 @@ func _take_damage(amount):
 		
 func _repair_damage(amount):
 	health = min(health + amount, health_max)
+	health_changed.emit(health)
 		
 func _shoot() -> bool:
 	if amunition > 0:
@@ -45,7 +46,7 @@ func _shoot() -> bool:
 
 func _reload() -> bool:
 	if amunition < amunition_max:
-		amunition += 1
+		amunition = amunition_max
 		ammo_changed.emit(amunition)
 		return true
 	return false
