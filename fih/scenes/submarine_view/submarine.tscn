@@ -82,6 +82,7 @@ radius = 19.0
 font_size = 38
 
 [node name="Submarine" type="Node2D" unique_id=1643673883]
+position = Vector2(-66, 0)
 
 [node name="Uboot" type="Sprite2D" parent="." unique_id=1326813057]
 z_index = 1
@@ -90,6 +91,8 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_jafjb")
 
 [node name="Walls" type="StaticBody2D" parent="Uboot" unique_id=1118224993]
+collision_layer = 2
+collision_mask = 2
 
 [node name="wall_right" type="CollisionShape2D" parent="Uboot/Walls" unique_id=2000653806]
 position = Vector2(166.24994, -72.50006)
@@ -144,6 +147,8 @@ shape = SubResource("SegmentShape2D_e2fjp")
 shape = SubResource("SegmentShape2D_x5rt3")
 
 [node name="reload_room" type="Area2D" parent="Uboot" unique_id=1647955569]
+collision_layer = 2
+collision_mask = 2
 
 [node name="reload_room" type="CollisionShape2D" parent="Uboot/reload_room" unique_id=407424220]
 physics_interpolation_mode = 2
@@ -153,6 +158,8 @@ shape = SubResource("RectangleShape2D_72hq5")
 debug_color = Color(0.61931896, 0.53434014, 0.071139134, 0.41960785)
 
 [node name="sonar_room" type="Area2D" parent="Uboot" unique_id=492180654]
+collision_layer = 2
+collision_mask = 2
 
 [node name="sonar_room" type="CollisionShape2D" parent="Uboot/sonar_room" unique_id=1450087001]
 position = Vector2(-72.18753, -227.49997)
@@ -161,6 +168,8 @@ shape = SubResource("RectangleShape2D_rvf3h")
 debug_color = Color(0.55212265, 0.5618311, 0.112284355, 0.41960785)
 
 [node name="weapon_room" type="Area2D" parent="Uboot" unique_id=269182153]
+collision_layer = 2
+collision_mask = 2
 
 [node name="weapon_room" type="CollisionShape2D" parent="Uboot/weapon_room" unique_id=1473959569]
 position = Vector2(64.37497, -228.74997)
@@ -169,6 +178,8 @@ shape = SubResource("RectangleShape2D_oh1sk")
 debug_color = Color(0.5739218, 0.54903984, 0.20884061, 0.41960785)
 
 [node name="shield_room" type="Area2D" parent="Uboot" unique_id=10649664]
+collision_layer = 2
+collision_mask = 2
 
 [node name="shield_room" type="CollisionShape2D" parent="Uboot/shield_room" unique_id=955255976]
 position = Vector2(-74.37503, 124.37494)
@@ -177,6 +188,8 @@ shape = SubResource("RectangleShape2D_r4147")
 debug_color = Color(0.5741291, 0.5516641, 0.16546234, 0.41960785)
 
 [node name="health_room" type="Area2D" parent="Uboot" unique_id=298201906]
+collision_layer = 2
+collision_mask = 2
 
 [node name="health_room" type="CollisionShape2D" parent="Uboot/health_room" unique_id=708793066]
 position = Vector2(61.24997, 53.74994)
@@ -185,6 +198,8 @@ shape = SubResource("RectangleShape2D_wxo6n")
 debug_color = Color(0.5691208, 0.554837, 0.12724823, 0.41960785)
 
 [node name="engine_room" type="Area2D" parent="Uboot" unique_id=59164697]
+collision_layer = 2
+collision_mask = 2
 
 [node name="engine_room" type="CollisionShape2D" parent="Uboot/engine_room" unique_id=2052492343]
 position = Vector2(62.8125, 370.62488)
@@ -208,8 +223,10 @@ autostart = true
 script = ExtResource("3_nosfk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1177419796]
-z_index = 1
+z_index = 2
 position = Vector2(345, 535)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("5_bfu6x")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1316672258]
@@ -225,9 +242,11 @@ shape = SubResource("CircleShape2D_p57dk")
 offset_left = -10.0
 offset_top = -27.0
 offset_right = 49.0
+metadata/_edit_use_anchors_ = true
 
 [node name="system_damaged_label" type="Label" parent="." unique_id=949724492]
 modulate = Color(0.74509805, 0, 0, 1)
+z_index = 2
 offset_left = 159.0
 offset_top = 37.5
 offset_right = 487.0
@@ -238,10 +257,18 @@ label_settings = SubResource("LabelSettings_evqqi")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_bfu6x")
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="system_damaged_label" unique_id=912022440]
 wait_time = 0.5
 autostart = true
+
+[node name="Panel" type="Panel" parent="." unique_id=228083526]
+offset_left = 124.0
+offset_top = 17.0
+offset_right = 519.0
+offset_bottom = 1047.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Uboot/reload_room" to="CharacterBody2D" method="_enter_reload"]
 [connection signal="body_entered" from="Uboot/sonar_room" to="CharacterBody2D" method="_enter_sonar"]

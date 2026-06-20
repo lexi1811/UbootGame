@@ -24,9 +24,20 @@ size = Vector2(172, 3143)
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
-[node name="background" type="Sprite2D" parent="." unique_id=1459372808]
-position = Vector2(648, -1)
-scale = Vector2(0.3528646, 0.48031485)
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=455649127]
+scale = Vector2(0.99999994, 0.99999994)
+repeat_size = Vector2(3458, 0)
+autoscroll = Vector2(-100, 0)
+
+[node name="background2" type="Sprite2D" parent="Parallax2D" unique_id=1970929479]
+position = Vector2(0, -1.66893e-06)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_7o7r8")
+centered = false
+
+[node name="background3" type="Sprite2D" parent="Parallax2D" unique_id=959118194]
+position = Vector2(1728.9999, 0)
+scale = Vector2(0.48, 0.48)
 texture = ExtResource("1_7o7r8")
 centered = false
 
@@ -64,7 +75,7 @@ texture = ExtResource("7_wopq6")
 physics_material_override = SubResource("PhysicsMaterial_3r7xc")
 
 [node name="CollisionLeftBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=1206046396 groups=["leftBorder"]]
-position = Vector2(609, 561.5001)
+position = Vector2(-265, 566)
 scale = Vector2(0.12056731, 0.28421056)
 shape = SubResource("RectangleShape2D_mv1lm")
 
@@ -85,18 +96,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=397621858]
-offset_left = 676.0
+offset_left = 546.0
 offset_top = 18.0
-offset_right = 893.0
+offset_right = 844.0
 offset_bottom = 80.0
 max_value = 5.0
 texture_under = ExtResource("8_ki0f0")
 texture_progress = ExtResource("9_7o7r8")
 
 [node name="AmmoCount" type="TextureProgressBar" parent="CanvasLayer" unique_id=1783031375]
-offset_left = 1013.0
+offset_left = 883.0
 offset_top = 20.0
-offset_right = 1311.0
+offset_right = 1181.0
 offset_bottom = 78.0
 max_value = 5.0
 texture_under = ExtResource("8_ki0f0")
