@@ -226,6 +226,7 @@
 
 ### Offizier
 - [ ] Torpedos bereit!
+- [ ] Sprengt den Wal!
 - [ ] Volltreffer!
 - [ ] Unser Sonar ist bereit!
 - [ ] Schutzschild repariert!
