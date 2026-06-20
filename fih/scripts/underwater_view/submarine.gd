@@ -19,6 +19,11 @@ func _ready() -> void:
 	game_state.health_depleted.connect(_on_game_over)
 
 func _process(_delta: float) -> void:
+	
+	#Debug
+	if Input.is_action_just_pressed("ui_end"):
+		game_state._destroy_system(global_enums.System.SONAR)
+	
 	if engine:
 		if Input.is_action_just_pressed("ui_down"):
 			if row < 5:

@@ -5,6 +5,7 @@ signal system_fixed(system)
 signal health_depleted
 signal health_changed(new_health)
 signal ammo_changed(new_ammo)
+signal all_systems_fixed()
 signal points_changed(points)
 
 var system_state: Dictionary[global_enums.System, bool] = {}
@@ -31,6 +32,11 @@ func _destroy_system(system: global_enums.System) -> void:
 func _fix_system(system: global_enums.System) -> void:
 	system_state[system] = true
 	system_fixed.emit(system)
+	if system_state.values().all(func(state): return state):
+		all_systems_fixed.emit()
+		
+func _is_system_functional(system: global_enums.System) -> bool:
+	return system_state[system]
 	
 func _take_damage(amount):
 	health -= amount
