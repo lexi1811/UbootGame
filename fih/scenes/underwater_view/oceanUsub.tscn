@@ -24,18 +24,18 @@ size = Vector2(172, 3143)
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=455649127]
+[node name="background_scroller" type="Parallax2D" parent="." unique_id=455649127]
 scale = Vector2(0.99999994, 0.99999994)
 repeat_size = Vector2(3458, 0)
 autoscroll = Vector2(-100, 0)
 
-[node name="background2" type="Sprite2D" parent="Parallax2D" unique_id=1970929479]
+[node name="background2" type="Sprite2D" parent="background_scroller" unique_id=1970929479]
 position = Vector2(0, -1.66893e-06)
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("1_7o7r8")
 centered = false
 
-[node name="background3" type="Sprite2D" parent="Parallax2D" unique_id=959118194]
+[node name="background3" type="Sprite2D" parent="background_scroller" unique_id=959118194]
 position = Vector2(1728.9999, 0)
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("1_7o7r8")
@@ -80,7 +80,7 @@ scale = Vector2(0.12056731, 0.28421056)
 shape = SubResource("RectangleShape2D_mv1lm")
 
 [node name="CollisionRightBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=901157907 groups=["rightBorder"]]
-position = Vector2(2207, 434.5)
+position = Vector2(2322, 434.5)
 shape = SubResource("RectangleShape2D_3r7xc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1734407509]

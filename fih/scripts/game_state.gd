@@ -70,7 +70,7 @@ func _shoot() -> bool:
 
 func _reload() -> bool:
 	if amunition < amunition_max:
-		amunition = amunition_max
+		amunition += 1
 		ammo_changed.emit(amunition)
 		return true
 	return false
