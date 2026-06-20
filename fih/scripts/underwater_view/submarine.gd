@@ -25,16 +25,12 @@ func _ready() -> void:
 	shield_sprite.visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Prüft, ob die Aktion "ui_cancel" (Standard: Escape-Taste) gedrückt wurde
 	if event.is_action_pressed("ui_cancel"):
-		# Lädt die Hauptmenü-Szene
 		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
-		#game_state._destroy_system(global_enums.System.SONAR)
 		game_state._take_damage(100)
 	
 	var vorherige_reihe = row
@@ -47,8 +43,6 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_up"):
 			if row > 0:
 				row -= 1
-				
-		# position.y = row * 180 + 200 
 	
 	if shield:
 		if Input.is_action_just_pressed("ui_left"):
@@ -57,16 +51,21 @@ func _process(delta: float) -> void:
 			
 			shield_sprite.visible = shieldActive
 
+	# REPARIERT: Tween-Erstellung komplett korrigiert!
 	if engine and row != vorherige_reihe:
 		var ziel_y = row * 180 + 200
 		
+		# Alten Tween stoppen, falls er noch läuft
 		if move_tween and move_tween.is_running():
 			move_tween.kill()
 			
-			# Wir animieren position:y in 0.2 Sekunden zum ziel_y
-			move_tween.tween_property(self, "position:y", ziel_y, 0.5)\
-				.set_trans(Tween.TRANS_CUBIC)\
-				.set_ease(Tween.EASE_OUT)
+		# Neuen Tween sauber erstellen (Das hat gefehlt!)
+		move_tween = create_tween()
+		
+		# Den Bewegungseffekt außerhalb der "is_running"-Abfrage ausführen
+		move_tween.tween_property(self, "position:y", ziel_y, 0.3)\
+			.set_trans(Tween.TRANS_CUBIC)\
+			.set_ease(Tween.EASE_OUT)
 		
 	if Input.is_action_pressed("fire_taurus"):
 		if weapons && !shieldActive:
@@ -105,7 +104,6 @@ func _on_system_destroyed(system: global_enums.System) -> void:
 	elif system == global_enums.System.SHIELD:
 		shield = false
 		shieldActive = false 
-
 		shield_sprite.visible = false 
 		print("U-Boot-System: Schilde sind offline!")
 		
