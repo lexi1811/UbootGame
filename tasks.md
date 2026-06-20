@@ -221,6 +221,8 @@
 - [ ] Sehr gut gemacht!
 - [ ] Oh nein!
 - [ ] Wilkommen (im Katzen U-Boot)
+- [ ] Alle Systeme sind einsatzbereit!
+- [ ] *Katzensounds*
 
 ### Offizier
 - [ ] Torpedos bereit!
@@ -231,3 +233,5 @@
 - [ ] Außenhülle repariert!
 - [ ] Yay!
 - [ ] Taurus für Timmy!
+- [ ] Lass uns spielen!
+- [ ] *Katzensounds*
