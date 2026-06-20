@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
-size = Vector2(680.1178, 190)
+size = Vector2(1443.1772, 425.74063)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3r7xc"]
 
@@ -20,7 +20,7 @@ size = Vector2(729.88727, 10453.517)
 size = Vector2(172, 3143)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78gii"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(1, 0.14636412, 0.10424686, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqow5"]
 bg_color = Color(0, 1, 0, 1)
@@ -58,12 +58,12 @@ script = ExtResource("4_nqow5")
 taurus_scene = ExtResource("5_m3mom")
 
 [node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1173671757]
-position = Vector2(-84.441, 1.7824249)
-scale = Vector2(0.60239667, 0.19641857)
+position = Vector2(273.70605, 7.0371094)
+scale = Vector2(1.2406498, 0.40452853)
 texture = ExtResource("6_m3mom")
 
 [node name="CollisionSubmarine" type="CollisionShape2D" parent="submarine" unique_id=1598191945]
-position = Vector2(-82.93994, 6.1035156e-05)
+position = Vector2(265.4121, 8.796387)
 shape = SubResource("RectangleShape2D_rutms")
 
 [node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
@@ -96,16 +96,20 @@ rounded = true
 show_percentage = false
 
 [node name="AmmoCount" type="ProgressBar" parent="CanvasLayer" unique_id=529066055]
-offset_left = 1322.0
-offset_top = 40.0
-offset_right = 1564.0
-offset_bottom = 98.0
+offset_left = 954.0
+offset_top = 22.0
+offset_right = 1196.0
+offset_bottom = 80.0
 theme_override_styles/background = SubResource("StyleBoxFlat_78gii")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3r7xc")
 max_value = 5.0
 step = 1.0
 rounded = true
 show_percentage = false
+
+[node name="Points" type="Label" parent="CanvasLayer" unique_id=214214654]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]
