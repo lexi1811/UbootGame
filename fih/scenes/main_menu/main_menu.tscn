@@ -5,14 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://dseyyt5qj0d77" path="res://assets/sprites/menu_sprites/continue.png" id="2_wem23"]
 [ext_resource type="Texture2D" uid="uid://c0elxvk3kcf1x" path="res://assets/sprites/menu_sprites/settings.png" id="3_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://wk8vm25rjadp" path="res://assets/sprites/menu_sprites/exit.png" id="4_5seab"]
+[ext_resource type="Texture2D" uid="uid://de4u5i8ncmwxf" path="res://assets/sprites/menu_sprites/main menu.png" id="6_3ovsr"]
 
 [node name="main_menu" type="Node2D" unique_id=1392293479]
 script = ExtResource("1_wem23")
 
 [node name="main_menu" type="MarginContainer" parent="." unique_id=926921638]
+offset_left = 384.0
+offset_top = 262.0
+offset_right = 1364.0
+offset_bottom = 1131.0
 
 [node name="main_menu" type="HBoxContainer" parent="main_menu" unique_id=1639765960]
 layout_mode = 2
+alignment = 1
 
 [node name="left" type="VBoxContainer" parent="main_menu/main_menu" unique_id=733538817]
 layout_mode = 2
@@ -42,3 +48,9 @@ texture_normal = ExtResource("4_5seab")
 
 [node name="CenterContainer" type="CenterContainer" parent="main_menu/main_menu" unique_id=779384573]
 layout_mode = 2
+
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=716469696]
+z_index = -1
+position = Vector2(944.9999, 542.00006)
+scale = Vector2(1.5098039, 1.0858587)
+texture = ExtResource("6_3ovsr")

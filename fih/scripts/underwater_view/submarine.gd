@@ -85,7 +85,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if !shield or !shieldActive:
-		game_state._take_damage(1)
+		var health = game_state._take_damage(1)
+	
+		if health == 0: return
 	
 		var new_explosion = explo_scene_sub.instantiate()
 		new_explosion.global_position = global_position
