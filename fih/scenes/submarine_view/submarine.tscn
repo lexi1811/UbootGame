@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ct7qravw2u4rk" path="res://scenes/submarine_view/engineer.tscn" id="2_jafjb"]
 [ext_resource type="Script" uid="uid://dpsctfx2eowm5" path="res://scenes/submarine_view/system_destroyer.gd" id="3_nosfk"]
 [ext_resource type="Script" uid="uid://pa736jqtdvpw" path="res://scripts/submarine_view/engineer.gd" id="5_bfu6x"]
+[ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://dfy6xuhnqvd1i" path="res://assets/sprites/submarine_view/Cat.jpg" id="6_w8qwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evqqi"]
@@ -69,13 +70,16 @@ size = Vector2(121.249985, 446.24994)
 size = Vector2(104.99995, 305.00006)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2fjp"]
-size = Vector2(111.875015, 161.24998)
+size = Vector2(111.875015, 288.75006)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhcc8"]
 size = Vector2(271.25, 156.87497)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p57dk"]
 radius = 19.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_evqqi"]
+font_size = 38
 
 [node name="Submarine" type="Node2D" unique_id=1643673883]
 
@@ -183,8 +187,8 @@ debug_color = Color(0.5691208, 0.554837, 0.12724823, 0.41960785)
 [node name="engine_room" type="Area2D" parent="Uboot" unique_id=59164697]
 
 [node name="engine_room" type="CollisionShape2D" parent="Uboot/engine_room" unique_id=2052492343]
-position = Vector2(62.8125, 434.37488)
-scale = Vector2(0.99999946, 0.99999946)
+position = Vector2(62.8125, 370.62488)
+scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_e2fjp")
 debug_color = Color(0.5674374, 0.55655736, 0.07779399, 0.41960785)
 
@@ -222,6 +226,23 @@ offset_left = -10.0
 offset_top = -27.0
 offset_right = 49.0
 
+[node name="system_damaged_label" type="Label" parent="." unique_id=949724492]
+modulate = Color(0.74509805, 0, 0, 1)
+offset_left = 159.0
+offset_top = 37.5
+offset_right = 487.0
+offset_bottom = 90.5
+pivot_offset = Vector2(160, 25)
+text = "System Damaged!"
+label_settings = SubResource("LabelSettings_evqqi")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_bfu6x")
+
+[node name="Timer" type="Timer" parent="system_damaged_label" unique_id=912022440]
+wait_time = 0.5
+autostart = true
+
 [connection signal="body_entered" from="Uboot/reload_room" to="CharacterBody2D" method="_enter_reload"]
 [connection signal="body_entered" from="Uboot/sonar_room" to="CharacterBody2D" method="_enter_sonar"]
 [connection signal="body_entered" from="Uboot/weapon_room" to="CharacterBody2D" method="_enter_weapon"]
@@ -229,3 +250,4 @@ offset_right = 49.0
 [connection signal="body_entered" from="Uboot/health_room" to="CharacterBody2D" method="_enter_health"]
 [connection signal="body_entered" from="Uboot/engine_room" to="CharacterBody2D" method="_enter_engine"]
 [connection signal="timeout" from="system_destroyer" to="system_destroyer" method="_on_timer_timeout"]
+[connection signal="timeout" from="system_damaged_label/Timer" to="system_damaged_label" method="pulse_animation"]
