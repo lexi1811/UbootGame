@@ -31,7 +31,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:	
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
-		game_state.schummeln = !game_state.schummeln
+		#game_state.schummeln = !game_state.schummeln
+		game_state._destroy_system(global_enums.System.SONAR)
 	
 	var vorherige_reihe = row
 	

@@ -4,12 +4,19 @@
 [ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
 [ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="4_nqow5"]
 [ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="5_m3mom"]
+[ext_resource type="Shader" uid="uid://c65dfp54er3nf" path="res://scenes/underwater_view/sonar.gdshader" id="5_wopq6"]
+[ext_resource type="Script" uid="uid://dwf1iuawjpuay" path="res://scenes/underwater_view/sonar_cover.gd" id="6_1krwu"]
 [ext_resource type="Texture2D" uid="uid://cijkwb2a2k561" path="res://assets/sprites/underwater_view/Ubootchen.png" id="6_m3mom"]
 [ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
 [ext_resource type="Texture2D" uid="uid://d3jk8jw16hw2t" path="res://assets/sprites/underwater_view/shild.png" id="7_wopq6"]
 [ext_resource type="Texture2D" uid="uid://dn0p74vnwgf3s" path="res://assets/sprites/underwater_view/progress_bg.png" id="8_ki0f0"]
 [ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="9_7o7r8"]
 [ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="10_7o7r8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evqqi"]
+shader = ExtResource("5_wopq6")
+shader_parameter/hole_radius = 0.1190000056525
+shader_parameter/feather = 0.15
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
 size = Vector2(1443.1772, 425.74063)
@@ -54,6 +61,15 @@ position = Vector2(750, 200.99998)
 scale = Vector2(0.12056731, 0.28421056)
 script = ExtResource("4_nqow5")
 taurus_scene = ExtResource("5_m3mom")
+
+[node name="sonar_cover" type="ColorRect" parent="submarine" unique_id=1484355703]
+material = SubResource("ShaderMaterial_evqqi")
+offset_left = -10450.594
+offset_top = -4651.4805
+offset_right = 12988.598
+offset_bottom = 4764.073
+color = Color(0.20080861, 0.20080861, 0.20080861, 1)
+script = ExtResource("6_1krwu")
 
 [node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1173671757]
 position = Vector2(273.70605, 7.0371094)
