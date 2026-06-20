@@ -14,6 +14,11 @@ config/name="Deep Dive"
 run/main_scene="uid://bj804727fv0r2"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+global_enums="*uid://c62wiyi6jp4ex"
+game_state="*uid://iywff56tgtrw"
+
 [display]
 
 window/size/viewport_width=1920
