@@ -15,6 +15,12 @@ func _on_timer_timeout() -> void:
 func _ready() -> void:
 	pass # Replace with function body.
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Prüft, ob die Aktion "ui_cancel" (Standard: Escape-Taste) gedrückt wurde
+	if event.is_action_pressed("ui_cancel"):
+		# Lädt die Hauptmenü-Szene
+		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Nach oben bewegen (Grenze ist 0)
