@@ -8,7 +8,8 @@ signal ammo_changed(new_ammo)
 
 
 var system_state: Dictionary[global_enums.System, bool] = {}
-var health = 5
+var health_max = 5
+var health = health_max
 var amunition_max = 5
 var amunition = amunition_max
 
@@ -31,6 +32,9 @@ func _take_damage(amount):
 	health_changed.emit(health)
 	if health <= 0:
 		health_depleted.emit()
+		
+func _repair_damage(amount):
+	health = min(health + amount, health_max)
 		
 func _shoot() -> bool:
 	if amunition > 0:
