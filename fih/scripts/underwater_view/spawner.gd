@@ -1,7 +1,7 @@
 extends Node2D
 
 # Hier laden wir die Bild-Szene, die wir oben erstellt haben
-@export var image_scene: PackedScene = preload("res://underwater_view/scenes/hamburger_wale.tscn")
+@export var image_scene: PackedScene = preload("res://scenes/underwater_view/hamburger_wale.tscn")
 
 func _on_timer_timeout() -> void:
 	# 1. Eine neue Instanz des Bildes erstellen
