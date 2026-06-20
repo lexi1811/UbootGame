@@ -26,12 +26,12 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")		
 
 func _process(delta: float) -> void:	
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
-		game_state._take_damage(100)
+		game_state.schummeln = !game_state.schummeln
 	
 	var vorherige_reihe = row
 	
