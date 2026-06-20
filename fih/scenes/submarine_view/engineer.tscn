@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ct7qravw2u4rk"]
+
+[ext_resource type="Script" uid="uid://pa736jqtdvpw" path="res://scripts/submarine_view/engineer.gd" id="1_t2rgd"]
+[ext_resource type="Texture2D" uid="uid://dfy6xuhnqvd1i" path="res://assets/sprites/submarine_view/Cat.jpg" id="2_0t4ax"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07jre"]
+radius = 19.0
+
+[node name="Engineer" type="Node2D" unique_id=1882566471]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=870677006]
+script = ExtResource("1_t2rgd")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=53560496]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_0t4ax")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1503414755]
+position = Vector2(19, 20)
+shape = SubResource("CircleShape2D_07jre")
