@@ -3,6 +3,9 @@ extends Node
 signal system_destroyed(system)
 signal system_fixed(system)
 signal health_depleted
+signal health_changed(new_health)
+signal ammo_changed(new_ammo)
+
 
 var system_state: Dictionary[global_enums.System, bool] = {}
 var health_max = 5
@@ -26,6 +29,7 @@ func _fix_system(system: global_enums.System) -> void:
 	
 func _take_damage(amount):
 	health -= amount
+	health_changed.emit(health)
 	if health <= 0:
 		health_depleted.emit()
 		
@@ -35,11 +39,13 @@ func _repair_damage(amount):
 func _shoot() -> bool:
 	if amunition > 0:
 		amunition -= 1
+		ammo_changed.emit(amunition)
 		return true
 	return false
 
 func _reload() -> bool:
 	if amunition < amunition_max:
 		amunition += 1
+		ammo_changed.emit(amunition)
 		return true
 	return false
