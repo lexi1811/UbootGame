@@ -13,7 +13,11 @@ var shield: bool = true
 var weapons: bool = true
 
 func _ready() -> void:
-	pass # Replace with function body.
+	# kollision
+	body_entered.connect(_on_body_entered)
+	game_state.system_destroyed.connect(_on_system_destroyed)
+	game_state.system_fixed.connect(_on_system_fixed)
+	game_state.health_depleted.connect(_on_game_over)
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Prüft, ob die Aktion "ui_cancel" (Standard: Escape-Taste) gedrückt wurde
@@ -22,27 +26,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# Nach oben bewegen (Grenze ist 0)
-	if Input.is_action_just_pressed("ui_down"):
-		if row < 5:
-			row += 1
-
-	# Nach unten bewegen (Grenze ist die Viewport-Höhe .y)
-	if Input.is_action_just_pressed("ui_up"):
-		if row > 0:
-			row -= 1
-	# kollision
-	body_entered.connect(_on_body_entered)
-	game_state.system_destroyed.connect(_on_system_destroyed)
-	game_state.system_fixed.connect(_on_system_fixed)
-	game_state.health_depleted.connect(_on_game_over)
-
-func _process(_delta: float) -> void:
-	
+func _process(delta: float) -> void:	
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
-		game_state._destroy_system(global_enums.System.SONAR)
+		#game_state._destroy_system(global_enums.System.SONAR)
+		game_state._take_damage(100)
 	
 	# In deiner _process oder _physics_process Funktion:
 	if engine:
@@ -69,7 +57,7 @@ func _process(_delta: float) -> void:
 			move_tween = create_tween()
 			
 			# Wir animieren position:y in 0.2 Sekunden zum ziel_y
-			move_tween.tween_property(self, "position:y", ziel_y, 0.2)\
+			move_tween.tween_property(self, "position:y", ziel_y, 0.5)\
 				.set_trans(Tween.TRANS_CUBIC)\
 				.set_ease(Tween.EASE_OUT)
 		
@@ -80,7 +68,7 @@ func _process(_delta: float) -> void:
 		
 			timeout = true
 			if has_node("Timer"):
-				$Timer.start()
+				$Timer.start(0.3)
 				
 			if game_state._shoot():	
 				var new_taurus = taurus_scene.instantiate()
@@ -91,7 +79,11 @@ func _process(_delta: float) -> void:
 
 # wenn kollision
 func _on_body_entered(body: Node2D) -> void:
-	game_state._take_damage(1)
+	var health = game_state._take_damage(1)
+	
+	if health == 0:
+		return
+	
 	var new_explosion = explo_scene_sub.instantiate()
 	new_explosion.global_position = global_position
 	new_explosion.global_position.x += 50
@@ -130,7 +122,7 @@ func _on_system_fixed(system: global_enums.System) -> void:
 		print("U-Boot-System: Waffen sind wieder einsatzbereit!")
 	
 func _on_game_over() -> void:
-	print("Game Over!")
+	get_tree().change_scene_to_file("res://scenes/game_over/game_over.tscn")
 
 func _on_timer_timeout() -> void:
 	timeout = false

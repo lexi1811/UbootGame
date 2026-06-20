@@ -20,6 +20,10 @@ func _enemy_killed(points) -> void:
 	points_changed.emit(pointsSum)
 
 func _ready() -> void:
+	health = health_max
+	amunition = amunition_max
+	pointsSum = 0
+	
 	for s in global_enums.System.values():
 		system_state[s] = true
 
@@ -38,11 +42,13 @@ func _fix_system(system: global_enums.System) -> void:
 func _is_system_functional(system: global_enums.System) -> bool:
 	return system_state[system]
 	
-func _take_damage(amount):
+func _take_damage(amount) -> int:
 	health -= amount
 	health_changed.emit(health)
 	if health <= 0:
 		health_depleted.emit()
+		return 0
+	return health
 		
 func _repair_damage(amount):
 	health = min(health + amount, health_max)
