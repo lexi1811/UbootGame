@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b3bbvn5t0sges"]
 
-[ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://assets/sprites/underwater_view/wasser oben.jpg" id="1_rutms"]
-[ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://assets/sprites/underwater_view/wasser unten.jpg" id="2_m3mom"]
+[ext_resource type="Texture2D" uid="uid://degjoccesbiy" path="res://assets/sprites/underwater_view/Hintergrundchen.png" id="1_7o7r8"]
 [ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
 [ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="4_nqow5"]
 [ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="5_m3mom"]
 [ext_resource type="Texture2D" uid="uid://cijkwb2a2k561" path="res://assets/sprites/underwater_view/Ubootchen.png" id="6_m3mom"]
 [ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
+[ext_resource type="Texture2D" uid="uid://d3jk8jw16hw2t" path="res://assets/sprites/underwater_view/shild.png" id="7_wopq6"]
 [ext_resource type="Texture2D" uid="uid://dn0p74vnwgf3s" path="res://assets/sprites/underwater_view/progress_bg.png" id="8_ki0f0"]
 [ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="9_7o7r8"]
 [ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="10_7o7r8"]
@@ -24,20 +24,14 @@ size = Vector2(172, 3143)
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
-[node name="water_top" type="Sprite2D" parent="." unique_id=73891401]
-position = Vector2(640, -57.00001)
-scale = Vector2(0.99538463, 0.36514127)
-texture = ExtResource("1_rutms")
-centered = false
-
-[node name="water_bottom" type="Sprite2D" parent="." unique_id=1459372808]
-position = Vector2(640, 230)
-scale = Vector2(0.3528646, 0.48564816)
-texture = ExtResource("2_m3mom")
+[node name="background" type="Sprite2D" parent="." unique_id=1459372808]
+position = Vector2(648, -1)
+scale = Vector2(0.3528646, 0.48031485)
+texture = ExtResource("1_7o7r8")
 centered = false
 
 [node name="enemy_spawner" type="Node2D" parent="." unique_id=2073450446]
-position = Vector2(1920, 20)
+position = Vector2(2048, 20)
 script = ExtResource("3_78gii")
 
 [node name="Timer" type="Timer" parent="enemy_spawner" unique_id=674748136]
@@ -62,11 +56,16 @@ shape = SubResource("RectangleShape2D_rutms")
 
 [node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
 
+[node name="ShieldSprite" type="Sprite2D" parent="submarine" unique_id=1057004287]
+position = Vector2(174.17656, 10.555664)
+scale = Vector2(1, 0.39973137)
+texture = ExtResource("7_wopq6")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
 physics_material_override = SubResource("PhysicsMaterial_3r7xc")
 
 [node name="CollisionLeftBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=1206046396 groups=["leftBorder"]]
-position = Vector2(605, 561.5001)
+position = Vector2(609, 561.5001)
 scale = Vector2(0.12056731, 0.28421056)
 shape = SubResource("RectangleShape2D_mv1lm")
 
