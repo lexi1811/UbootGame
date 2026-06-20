@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		$Sprite2D.show()
 
 func _physics_process(delta: float) -> void:	
-	velocity = direction * speed
+	velocity = direction * (speed * game_state.speed_factor)
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:

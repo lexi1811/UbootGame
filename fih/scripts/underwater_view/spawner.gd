@@ -14,11 +14,10 @@ func _on_timer_timeout() -> void:
 	if spawn_chance < 0.2:
 		selected_scene = whale_scene_offset
 		
-		# REPARIERT: 50/50 Chance, ob der Offset exakt +0.6 oder -0.6 ist
 		if randf() < 0.5:
-			lane_offset = 0.6
+			lane_offset = 0.5
 		else:
-			lane_offset = -0.6
+			lane_offset = -0.5
 		
 	else:
 		var random_enemy_type: int = randi_range(1, 2)
