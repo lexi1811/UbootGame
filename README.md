@@ -99,18 +99,15 @@ Durch Upgrades kann die Geschwindigkeit und Kampfkraft erhöht werden.
 5. Wenn etwas kaputt geht -> sound
 6. nachladen, wenn wieder ready ist?
 
-#### Steuerung
+## Steuerung
 
-## Allgemein
-
+Allgemein
 Pause - escape
 
-## Spieler 1 (Mechaniker)
-
+Spieler 1 (Mechaniker)
 Bewegen - wasd
 
-## Spieler 2 (Katzen U-Boot)
-
+Spieler 2 (Katzen U-Boot)
 Bewegen - Pfeiltasten
 
 
