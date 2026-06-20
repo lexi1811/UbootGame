@@ -220,6 +220,7 @@
 - [ ] Ein Boss ist im Anmarsch!
 - [ ] Sehr gut gemacht!
 - [ ] Oh nein!
+- [ ] Wilkommen (im Katzen U-Boot)
 
 ### Offizier
 - [ ] Torpedos bereit!
