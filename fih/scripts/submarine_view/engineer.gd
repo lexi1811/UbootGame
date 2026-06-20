@@ -7,7 +7,7 @@ func get_input():
 	# Wir weisen der eingebauten Variable 'velocity' den Wert zu
 	velocity = input_dir * speed
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	# move_and_slide() nutzt automatisch die 'velocity' und verrechnet 'delta' selbst!
 	move_and_slide()

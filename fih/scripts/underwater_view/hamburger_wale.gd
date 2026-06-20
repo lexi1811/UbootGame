@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 
+func _ready() -> void:
+	add_to_group("wale")
+	
 # richtung
 var direction: Vector2 = Vector2(-1, 0)
 

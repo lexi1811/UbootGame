@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
 [ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="4_nqow5"]
 [ext_resource type="Texture2D" uid="uid://qkvp4ieciceu" path="res://assets/sprites/underwater_view/uboooot.jpg" id="5_ki0f0"]
+[ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="5_m3mom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
 size = Vector2(846.00134, 190)
@@ -13,6 +14,9 @@ size = Vector2(846.00134, 190)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1lm"]
 size = Vector2(729.88727, 10453.517)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(172, 3143)
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
@@ -41,6 +45,7 @@ z_index = 1
 position = Vector2(750, 200.99998)
 scale = Vector2(0.12056731, 0.28421056)
 script = ExtResource("4_nqow5")
+taurus_scene = ExtResource("5_m3mom")
 
 [node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1173671757]
 texture = ExtResource("5_ki0f0")
@@ -54,10 +59,14 @@ shape = SubResource("RectangleShape2D_rutms")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
 physics_material_override = SubResource("PhysicsMaterial_3r7xc")
 
-[node name="CollisionLeftBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=1206046396]
+[node name="CollisionLeftBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=1206046396 groups=["leftBorder"]]
 position = Vector2(605, 561.5001)
 scale = Vector2(0.12056731, 0.28421056)
 shape = SubResource("RectangleShape2D_mv1lm")
+
+[node name="CollisionRightBorder" type="CollisionShape2D" parent="StaticBody2D" unique_id=901157907 groups=["rightBorder"]]
+position = Vector2(2207, 434.5)
+shape = SubResource("RectangleShape2D_3r7xc")
 
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]

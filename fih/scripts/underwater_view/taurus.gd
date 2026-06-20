@@ -12,7 +12,10 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var hit_object = collision.get_collider()
-		hit_object.queue_free()
+		if hit_object.is_in_group("wale"):
+			hit_object.queue_free()
+		elif hit_object.is_in_group("rightBorder"):
+			queue_free()
 		
 		var new_explosion = explo_scene.instantiate()
 		new_explosion.global_position = global_position
