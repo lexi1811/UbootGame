@@ -9,13 +9,11 @@ var time_passed: float = 0.0
 var direction: Vector2 = Vector2(-1, 0)
 
 func _ready() -> void:
-	# REPARIERT: Unterstriche vor den Funktionsnamen ergänzt
-	game_state.system_destroyed.connect(_on_system_destroyed)
-	game_state.system_fixed.connect(_on_system_fixed)
-	
+	#game_state.system_destroyed.connect(on_system_destroyed)
+	#game_state.system_fixed.connect(on_system_fixed)
 	add_to_group("haie") 
-	if !game_state._is_system_functional(global_enums.System.SONAR):
-		sonar_destroyed = true
+	#if !game_state._is_system_functional(global_enums.System.SONAR):
+	#	sonar_destroyed = true
 
 func _on_system_destroyed(system) -> void:
 	if system == global_enums.System.SONAR:

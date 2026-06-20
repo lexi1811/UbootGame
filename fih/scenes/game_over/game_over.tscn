@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://bh2wpjh70xhar"]
 
-[ext_resource type="Texture2D" uid="uid://cx3sxyqigore5" path="res://assets/sprites/submarine_view/uboot.png" id="1_3iia1"]
 [ext_resource type="Script" uid="uid://djowrg5e2ob1m" path="res://scenes/game_over/label_highscore.gd" id="7_3iia1"]
 [ext_resource type="Script" uid="uid://bdy8a2khrfhuy" path="res://scenes/game_over/restart.gd" id="7_3mpp1"]
-[ext_resource type="Texture2D" uid="uid://dn0p74vnwgf3s" path="res://assets/sprites/underwater_view/progress_bg.png" id="7_7hf3m"]
 [ext_resource type="Texture2D" uid="uid://degjoccesbiy" path="res://assets/sprites/underwater_view/Hintergrundchen.png" id="7_tbth1"]
-[ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="8_q3edm"]
 [ext_resource type="Script" uid="uid://cmkkbbgybje5c" path="res://scenes/game_over/exit.gd" id="8_tbth1"]
-[ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="9_smh6r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evqqi"]
 font_size = 100
@@ -17,12 +13,6 @@ font_size = 60
 
 [node name="GameOver" type="Node2D" unique_id=32512584]
 
-[node name="Uboot" type="Sprite2D" parent="." unique_id=1328631292]
-z_index = 1
-position = Vector2(320.00003, 579.00006)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_3iia1")
-
 [node name="Points" type="Label" parent="." unique_id=167648266]
 offset_left = 1480.0
 offset_top = 31.0
@@ -31,26 +21,8 @@ offset_bottom = 83.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 
-[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=905794931]
-offset_left = 676.0
-offset_top = 18.0
-offset_right = 893.0
-offset_bottom = 80.0
-max_value = 5.0
-texture_under = ExtResource("7_7hf3m")
-texture_progress = ExtResource("8_q3edm")
-
-[node name="AmmoCount" type="TextureProgressBar" parent="." unique_id=1338416865]
-offset_left = 1013.0
-offset_top = 20.0
-offset_right = 1311.0
-offset_bottom = 78.0
-max_value = 5.0
-texture_under = ExtResource("7_7hf3m")
-texture_progress = ExtResource("9_smh6r")
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=408747280]
-z_index = 2
+z_index = 1
 offset_left = -50.0
 offset_top = -30.0
 offset_right = 1965.0
@@ -95,8 +67,13 @@ label_settings = SubResource("LabelSettings_hc246")
 horizontal_alignment = 1
 script = ExtResource("7_3iia1")
 
-[node name="background" type="Sprite2D" parent="." unique_id=1678488800]
-position = Vector2(648, -1)
-scale = Vector2(0.3528646, 0.48031485)
+[node name="background2" type="Sprite2D" parent="." unique_id=168952527]
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("7_tbth1")
+centered = false
+
+[node name="background3" type="Sprite2D" parent="." unique_id=969964351]
+position = Vector2(1729, 0)
+scale = Vector2(0.48, 0.48)
 texture = ExtResource("7_tbth1")
 centered = false

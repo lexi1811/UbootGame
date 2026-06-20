@@ -4,11 +4,11 @@ extends CharacterBody2D
 var sonar_destroyed: bool = false
 
 func _ready() -> void:
-	game_state.system_destroyed.connect(on_system_destroyed)
-	game_state.system_fixed.connect(on_system_fixed)
+	#game_state.system_destroyed.connect(on_system_destroyed)
+	#game_state.system_fixed.connect(on_system_fixed)
 	add_to_group("walOffset")
-	if !game_state._is_system_functional(global_enums.System.SONAR):
-		sonar_destroyed = true
+	#if !game_state._is_system_functional(global_enums.System.SONAR):
+	#	sonar_destroyed = true
 	
 # richtung
 var direction: Vector2 = Vector2(-1, 0)
