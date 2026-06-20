@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cx3sxyqigore5" path="res://assets/sprites/submarine_view/uboot.png" id="1_jafjb"]
 [ext_resource type="PackedScene" uid="uid://ct7qravw2u4rk" path="res://scenes/submarine_view/engineer.tscn" id="2_jafjb"]
+[ext_resource type="Script" uid="uid://dpsctfx2eowm5" path="res://scenes/submarine_view/system_destroyer.gd" id="3_nosfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evqqi"]
 size = Vector2(80.00001, 621.25024)
@@ -115,3 +116,10 @@ shape = SubResource("SegmentShape2D_x5rt3")
 [node name="Engineer" parent="." unique_id=1882566471 instance=ExtResource("2_jafjb")]
 z_index = 1
 position = Vector2(320, 586)
+
+[node name="system_destroyer" type="Timer" parent="." unique_id=1416006287]
+wait_time = 0.332
+autostart = true
+script = ExtResource("3_nosfk")
+
+[connection signal="timeout" from="system_destroyer" to="system_destroyer" method="_on_timer_timeout"]
