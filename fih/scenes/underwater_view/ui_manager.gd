@@ -16,6 +16,18 @@ func _ready() -> void:
 
 func _on_points_changed(pointsSum: int) -> void:
 	points.text = "Punkte: " + str(pointsSum)
+	
+	var tween = create_tween()
+	
+	# Auf das 1.2-fache vergrößern mit TRANS_SINE
+	tween.tween_property(points, "scale", Vector2(1.2, 1.2), 0.1)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
+		
+	# Wieder zurück auf Normalgröße (1.0)
+	tween.tween_property(points, "scale", Vector2(1.0, 1.0), 0.1)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN)
 
 func _on_health_changed(new_health: int) -> void:
 	health_bar.value = new_health
