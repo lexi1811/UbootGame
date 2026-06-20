@@ -29,13 +29,19 @@ func _process(_delta: float) -> void:
 	
 	if engine:
 		if Input.is_action_just_pressed("ui_down"):
+<<<<<<< HEAD
 			if row < 4:
 				row += 1	
+=======
+			if row < 5:
+				row += 1    
+>>>>>>> f115e7a15d2db5e0837766c2d49c0641632483f2
 
 		if Input.is_action_just_pressed("ui_up"):
 			if row > 0:
 				row -= 1
 				
+<<<<<<< HEAD
 		position.y = row * 180 + 200
 	
 	if shield:
