@@ -213,26 +213,26 @@
 ## Voicelines
 
 ### Captain
-- [ ] Waffensysteme ausgefallen!
-- [ ] Das Sonar ist ausgefallen!
-- [ ] Die Schutzschilde sind kaputt!
-- [ ] Wir haben einen Motorschaden!
-- [ ] Ein Boss ist im Anmarsch!
-- [ ] Sehr gut gemacht!
-- [ ] Oh nein!
-- [ ] Wilkommen (im Katzen U-Boot)
-- [ ] Alle Systeme sind einsatzbereit!
+- [x] Waffensysteme ausgefallen!
+- [x] Das Sonar ist ausgefallen!
+- [x] Die Schutzschilde sind kaputt!
+- [x] Wir haben einen Motorschaden!
+- [x] Ein Boss ist im Anmarsch!
+- [x] Sehr gut gemacht!
+- [x] Oh nein!
+- [x] Wilkommen (im Katzen U-Boot)
+- [x] Alle Systeme sind einsatzbereit!
 - [ ] *Katzensounds*
 
 ### Offizier
-- [ ] Torpedos bereit!
-- [ ] Sprengt den Wal!
-- [ ] Volltreffer!
-- [ ] Unser Sonar ist bereit!
-- [ ] Schutzschild repariert!
-- [ ] Uuugh!
-- [ ] Außenhülle repariert!
-- [ ] Yay!
-- [ ] Taurus für Timmy!
-- [ ] Lass uns spielen!
+- [x] Torpedos bereit!
+- [x] Sprengt den Wal!
+- [x] Volltreffer!
+- [x] Unser Sonar ist bereit!
+- [x] Schutzschild repariert!
+- [x] Uuugh!
+- [x] Außenhülle repariert!
+- [x] Yay!
+- [x] Taurus für Timmy!
+- [x] Lass uns spielen!
 - [ ] *Katzensounds*
