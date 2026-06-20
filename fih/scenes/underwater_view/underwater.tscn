@@ -36,6 +36,7 @@ texture = ExtResource("4_gjobs")
 script = ExtResource("5_lve0d")
 
 [node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
+wait_time = 0.1
 
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]
