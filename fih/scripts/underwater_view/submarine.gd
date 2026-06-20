@@ -13,6 +13,25 @@ var shield: bool = true
 var weapons: bool = true
 
 func _ready() -> void:
+	pass # Replace with function body.
+
+func _unhandled_input(event: InputEvent) -> void:
+	# Prüft, ob die Aktion "ui_cancel" (Standard: Escape-Taste) gedrückt wurde
+	if event.is_action_pressed("ui_cancel"):
+		# Lädt die Hauptmenü-Szene
+		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	# Nach oben bewegen (Grenze ist 0)
+	if Input.is_action_just_pressed("ui_down"):
+		if row < 5:
+			row += 1
+
+	# Nach unten bewegen (Grenze ist die Viewport-Höhe .y)
+	if Input.is_action_just_pressed("ui_up"):
+		if row > 0:
+			row -= 1
 	# kollision
 	body_entered.connect(_on_body_entered)
 	game_state.system_destroyed.connect(_on_system_destroyed)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Deep Dive"
-run/main_scene="uid://bj804727fv0r2"
+run/main_scene="uid://cbgjm2cwaxa2i"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
