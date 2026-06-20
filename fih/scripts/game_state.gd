@@ -15,6 +15,8 @@ var amunition_max = 5
 var amunition = amunition_max
 var pointsSum: int = 0
 
+var schummeln: bool = false
+
 func _enemy_killed(points) -> void:
 	pointsSum += points
 	points_changed.emit(pointsSum)
@@ -28,10 +30,11 @@ func _ready() -> void:
 		system_state[s] = true
 
 func _destroy_system(system: global_enums.System) -> void:
-	system_state[system] = false
-	system_destroyed.emit(system)
-	print(system)
-	print("Destroyed sytem: ", global_enums.System.find_key(system))
+	if !schummeln:
+		system_state[system] = false
+		system_destroyed.emit(system)
+		print(system)
+		print("Destroyed sytem: ", global_enums.System.find_key(system))
 	
 func _fix_system(system: global_enums.System) -> void:
 	system_state[system] = true
@@ -43,11 +46,12 @@ func _is_system_functional(system: global_enums.System) -> bool:
 	return system_state[system]
 	
 func _take_damage(amount) -> int:
-	health -= amount
-	health_changed.emit(health)
-	if health <= 0:
-		health_depleted.emit()
-		return 0
+	if !schummeln:
+		health -= amount
+		health_changed.emit(health)
+		if health <= 0:
+			health_depleted.emit()
+			return 0
 	return health
 		
 func _repair_damage(amount):
@@ -55,6 +59,9 @@ func _repair_damage(amount):
 	health_changed.emit(health)
 		
 func _shoot() -> bool:
+	if schummeln:
+		return true
+		
 	if amunition > 0:
 		amunition -= 1
 		ammo_changed.emit(amunition)

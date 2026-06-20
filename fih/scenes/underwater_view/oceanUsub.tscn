@@ -35,7 +35,6 @@ position = Vector2(2048, 20)
 script = ExtResource("3_78gii")
 
 [node name="Timer" type="Timer" parent="enemy_spawner" unique_id=674748136]
-wait_time = 2.488
 autostart = true
 
 [node name="submarine" type="Area2D" parent="." unique_id=149659679]
