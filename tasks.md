@@ -209,3 +209,24 @@
 
 ### Nice To Have
 - [ ] Dynamische Musik
+
+## Voicelines
+
+### Captain
+- [ ] Waffensysteme ausgefallen!
+- [ ] Das Sonar ist ausgefallen!
+- [ ] Die Schutzschilde sind kaputt!
+- [ ] Wir haben einen Motorschaden!
+- [ ] Ein Boss ist im Anmarsch!
+- [ ] Sehr gut gemacht!
+- [ ] Oh nein!
+
+### Offizier
+- [ ] Torpedos bereit!
+- [ ] Volltreffer!
+- [ ] Unser Sonar ist bereit!
+- [ ] Schutzschild repariert!
+- [ ] Uuugh!
+- [ ] Außenhülle repariert!
+- [ ] Yay!
+- [ ] Taurus für Timmy!
