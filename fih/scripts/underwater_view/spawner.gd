@@ -1,18 +1,38 @@
 extends Node2D
 
-# Hier laden wir die Bild-Szene, die wir oben erstellt haben
-@export var image_scene: PackedScene = preload("res://scenes/underwater_view/hamburger_wale.tscn")
+@export var whale_scene: PackedScene = preload("res://scenes/underwater_view/hamburger_wale.tscn")
+@export var shark_scene: PackedScene = preload("res://scenes/underwater_view/shark.tscn")
+@export var whale_scene_offset: PackedScene = preload("res://scenes/underwater_view/GegnerchenOFFSET.tscn")
 
 func _on_timer_timeout() -> void:
-	# 1. Eine neue Instanz des Bildes erstellen
-	var new_image = image_scene.instantiate()
+	var random_lane: int = randi_range(0, 4)
+	var selected_scene: PackedScene
+	var spawn_chance: float = randf_range(0.0, 1.0)
 	
-	# 2. Dem Bild die aktuelle Position des Spawners geben
-	new_image.global_position = global_position
+	var lane_offset: float = 0.0
 	
-	var random_int = randi_range(1, 5)
+	if spawn_chance < 0.2:
+		selected_scene = whale_scene_offset
+		
+		if randf() < 0.5:
+			lane_offset = 0.5
+		else:
+			lane_offset = -0.5
+		
+	else:
+		var random_enemy_type: int = randi_range(1, 2)
+		
+		if random_enemy_type == 1:
+			selected_scene = shark_scene
+			if random_lane == 4:
+				selected_scene = whale_scene
+		else:
+			selected_scene = whale_scene
 	
-	new_image.global_position.y = new_image.global_position.y + 180 * random_int
+	var enemy_instance = selected_scene.instantiate()
+	enemy_instance.global_position = global_position
 	
-	# 3. Das Bild zur Hauptszene hinzufügen
-	get_parent().add_child(new_image)
+	# Der lane_offset wird hier mathematisch eingerechnet (+/- 108 Pixel Versatz)
+	enemy_instance.global_position.y = (random_lane + lane_offset) * 180 + 200
+	
+	get_parent().add_child(enemy_instance)

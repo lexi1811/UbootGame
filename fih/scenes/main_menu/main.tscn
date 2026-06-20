@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bj804727fv0r2"]
 
-[ext_resource type="PackedScene" uid="uid://b3bbvn5t0sges" path="res://scenes/underwater_view/underwater.tscn" id="1_xc0v1"]
+[ext_resource type="PackedScene" uid="uid://b3bbvn5t0sges" path="res://scenes/underwater_view/oceanUsub.tscn" id="1_xc0v1"]
 [ext_resource type="PackedScene" uid="uid://053fcjjssby1" path="res://scenes/submarine_view/submarine.tscn" id="2_5o5oo"]
 
 [node name="Main" type="Node2D" unique_id=1150944948]

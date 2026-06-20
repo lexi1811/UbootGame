@@ -1,9 +1,20 @@
 [gd_scene format=3 uid="uid://diac5q40bd3jm"]
 
-[ext_resource type="Texture2D" uid="uid://b54jflx2ixu1x" path="res://assets/sprites/underwater_view/taurus.jpg" id="1_sepw0"]
 [ext_resource type="Script" uid="uid://ck5kuoq6ppyvt" path="res://scripts/underwater_view/taurus.gd" id="2_ecngg"]
+[ext_resource type="Texture2D" uid="uid://bqyj5i7irv7km" path="res://assets/sprites/underwater_view/Torpedochen.png" id="2_ssire"]
 
-[node name="Taurus" type="Sprite2D" unique_id=1070159643]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(2008.0646, 645.81836)
+
+[node name="Taurus" type="CharacterBody2D" unique_id=1874101971]
 scale = Vector2(0.041333333, 0.03716215)
-texture = ExtResource("1_sepw0")
 script = ExtResource("2_ecngg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=990333343]
+position = Vector2(2927.4192, 53.818237)
+scale = Vector2(2.278947, 2.278947)
+texture = ExtResource("2_ssire")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1861715036]
+position = Vector2(2939.5166, 53.8182)
+shape = SubResource("RectangleShape2D_3r7xc")

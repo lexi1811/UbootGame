@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1wnplbvf35dg"]
+
+[ext_resource type="Texture2D" uid="uid://cbrdypqchcrmu" path="res://assets/sprites/underwater_view/explosion.png" id="1_b261e"]
+
+[node name="Explosion" type="Node2D" unique_id=1876901179]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003039666]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_b261e")

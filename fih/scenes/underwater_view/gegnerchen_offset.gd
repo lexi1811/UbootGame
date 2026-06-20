@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
+@export var speed: float = 170.0
 var sonar_destroyed: bool = false
 
 func _ready() -> void:
 	#game_state.system_destroyed.connect(on_system_destroyed)
 	#game_state.system_fixed.connect(on_system_fixed)
-	add_to_group("wale")
+	add_to_group("walOffset")
 	#if !game_state._is_system_functional(global_enums.System.SONAR):
 	#	sonar_destroyed = true
 	

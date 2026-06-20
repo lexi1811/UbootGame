@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b3bbvn5t0sges"]
+[gd_scene format=3 uid="uid://cix3csxgb00rx"]
 
 [ext_resource type="Texture2D" uid="uid://b4ngl4ub38psp" path="res://assets/sprites/underwater_view/wasser oben.jpg" id="1_pla4i"]
 [ext_resource type="Texture2D" uid="uid://ngcoimu0180t" path="res://assets/sprites/underwater_view/wasser unten.jpg" id="2_g1ryi"]
@@ -36,6 +36,7 @@ texture = ExtResource("4_gjobs")
 script = ExtResource("5_lve0d")
 
 [node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
+wait_time = 0.1
 
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]
