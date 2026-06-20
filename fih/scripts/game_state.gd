@@ -17,17 +17,25 @@ var pointsSum: int = 0
 
 var schummeln: bool = false
 
-func _enemy_killed(points) -> void:
-	pointsSum += points
-	points_changed.emit(pointsSum)
+var speed_factor: float = 1.0
+
+@export var difficulty_increase_rate: float = 0.01
 
 func _ready() -> void:
 	health = health_max
 	amunition = amunition_max
 	pointsSum = 0
+	speed_factor = 1.0 # Beim Neustart zurücksetzen
 	
 	for s in global_enums.System.values():
 		system_state[s] = true
+
+func _process(delta: float) -> void:
+	speed_factor += difficulty_increase_rate * delta
+
+func _enemy_killed(points) -> void:
+	pointsSum += points
+	points_changed.emit(pointsSum)
 
 func _destroy_system(system: global_enums.System) -> void:
 	if !schummeln:
