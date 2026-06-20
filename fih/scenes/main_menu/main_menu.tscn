@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dseyyt5qj0d77" path="res://assets/sprites/menu_sprites/continue.png" id="2_wem23"]
 [ext_resource type="Texture2D" uid="uid://c0elxvk3kcf1x" path="res://assets/sprites/menu_sprites/settings.png" id="3_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://wk8vm25rjadp" path="res://assets/sprites/menu_sprites/exit.png" id="4_5seab"]
+[ext_resource type="Texture2D" uid="uid://de4u5i8ncmwxf" path="res://assets/sprites/menu_sprites/main menu.png" id="6_3ovsr"]
 
 [node name="main_menu" type="Node2D" unique_id=1392293479]
 script = ExtResource("1_wem23")
@@ -42,3 +43,7 @@ texture_normal = ExtResource("4_5seab")
 
 [node name="CenterContainer" type="CenterContainer" parent="main_menu/main_menu" unique_id=779384573]
 layout_mode = 2
+
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=716469696]
+position = Vector2(947, 518)
+texture = ExtResource("6_3ovsr")
