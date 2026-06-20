@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://bjfiiycufqvwr" path="res://scripts/underwater_view/shark.gd" id="1_7bkay"]
 [ext_resource type="Texture2D" uid="uid://cycnk6k0baihk" path="res://assets/sprites/underwater_view/very_evil_shark.png" id="2_ewdrt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24xnr"]
-radius = 27.0
-height = 186.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewdrt"]
+radius = 19.208544
+height = 168.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(41, 79)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3r7xc"]
+radius = 19.225113
+height = 157.02861
 
 [node name="shark" type="CharacterBody2D" unique_id=1754415973]
 position = Vector2(-4, -7)
@@ -17,6 +24,15 @@ scale = Vector2(0.11965297, 0.13617608)
 texture = ExtResource("2_ewdrt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1570800993]
-position = Vector2(-97, 1)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_24xnr")
+position = Vector2(-113.99999, 3)
+rotation = 1.7802359
+shape = SubResource("CapsuleShape2D_ewdrt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1931310040]
+position = Vector2(-30.5, -4.5)
+shape = SubResource("RectangleShape2D_3r7xc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=697567113]
+position = Vector2(-115.00001, -19)
+rotation = 1.446878
+shape = SubResource("CapsuleShape2D_3r7xc")

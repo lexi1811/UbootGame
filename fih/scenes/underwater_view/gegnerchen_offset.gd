@@ -1,19 +1,17 @@
 extends CharacterBody2D
 
-@export var speed: float = 400.0
-@export var wave_amplitude: float = 500.0
-@export var wave_frequency: float = 5.0
-
+@export var speed: float = 200.0
 var sonar_destroyed: bool = false
-var time_passed: float = 0.0
-var direction: Vector2 = Vector2(-1, 0)
 
 func _ready() -> void:
 	game_state.system_destroyed.connect(on_system_destroyed)
 	game_state.system_fixed.connect(on_system_fixed)
-	add_to_group("haie") 
+	add_to_group("walOffset")
 	if !game_state._is_system_functional(global_enums.System.SONAR):
 		sonar_destroyed = true
+	
+# richtung
+var direction: Vector2 = Vector2(-1, 0)
 
 func on_system_destroyed(system) -> void:
 	if system == global_enums.System.SONAR:
@@ -30,13 +28,11 @@ func _process(delta: float) -> void:
 		$Sprite2D.show()
 
 func _physics_process(delta: float) -> void:	
-	time_passed += delta
-	var vertical_movement = sin(time_passed * wave_frequency) * wave_amplitude
-	velocity = Vector2(direction.x * speed, vertical_movement)
+	velocity = direction * speed
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var hit_object = collision.get_collider()
-		if !hit_object.is_in_group("wale") && !hit_object.is_in_group("taurus"):
+		if !hit_object.is_in_group("haie") && !hit_object.is_in_group("taurus"):
 			#print("I collided with ", collision.get_collider().name)
 			queue_free()

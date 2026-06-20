@@ -6,6 +6,9 @@ extends CharacterBody2D
 # richtung
 var direction: Vector2 = Vector2(1, 0)
 
+func _ready() -> void:
+	add_to_group("taurus") 
+
 func _physics_process(delta: float) -> void:	
 	velocity = direction * speed
 	
@@ -15,6 +18,12 @@ func _physics_process(delta: float) -> void:
 		if hit_object.is_in_group("wale"):
 			hit_object.queue_free()
 			game_state._enemy_killed(10)
+		if hit_object.is_in_group("haie"):
+			hit_object.queue_free()
+			game_state._enemy_killed(20)
+		if hit_object.is_in_group("walOffset"):
+			hit_object.queue_free()
+			game_state._enemy_killed(30)
 		elif hit_object.is_in_group("rightBorder"):
 			queue_free()
 		
