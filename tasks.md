@@ -93,35 +93,86 @@
 
 # Art
 
+# Art Tasks
+
 ## Underwater View
 
-### Must Have
-- [ ] Spieler-U-Boot
-- [ ] Gegner Typ 1
-- [ ] Gegner Typ 2
-- [ ] Torpedo
-- [ ] Hintergrund
-- [ ] HP Icons
+### Spieler
 
-### Nice To Have
-- [ ] Boss
-- [ ] Powerup Icons
-- [ ] Zusätzliche Gegner
+* [ ] Spielerfigur: U-Boot
+
+### Umgebung
+
+* [ ] Hintergrund (Wasser)
+
+### Waffen
+
+* [ ] Torpedos
+* [ ] Laserstrahl
+
+### Gegner
+
+* [ ] Normales Gegner-U-Boot
+* [ ] Mini Boss
+* [ ] Kraken (geht schräg über die Map)
+
+### Animationen
+
+* [ ] Gegner getötet
+* [ ] Spieler stirbt
+
+### Optional
+
+* [ ] NPCs
+* [ ] Nachladebalken
+
+---
 
 ## Submarine View
 
-### Must Have
-- [ ] Innenraum Layout
-- [ ] Engineer Sprite
-- [ ] Waffenraum
-- [ ] Motorraum
-- [ ] Sonarraum
-- [ ] Schildraum
-- [ ] Defekt-Icons
+### Spieler
 
-### Nice To Have
-- [ ] Animationen
-- [ ] Deko Assets
+* [ ] Spielerfigur: Katze
+
+### Umgebung
+
+* [ ] U-Boot-Raum
+
+### Reparatursachen
+
+* [ ] Waffen (Torpedos)
+* [ ] Schild
+* [ ] Sonar
+* [ ] Motor
+
+### UI / Anzeigen
+
+* [ ] Lebensanzeigen/Balken für Reparatursachen
+
+### Umgebungseffekte
+
+* [ ] Pfütze
+* [ ] Rote Warnleuchte (man ist langsamer)
+* [ ] Wasser läuft rein
+
+---
+
+## Menü
+
+### Hauptmenü
+
+* [ ] Start
+* [ ] Beenden
+
+### Pause-Menü
+
+* [ ] Weiter
+* [ ] Beenden
+
+### Ziel-Menü
+
+* [ ] Punktestand
+* [ ] Weiter -> Hauptmenü
 
 ---
 
