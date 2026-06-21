@@ -47,7 +47,7 @@ offset_left = 651.0
 offset_top = 198.0
 offset_right = 1420.0
 offset_bottom = 361.0
-text = "DEAD 💀"
+text = "DEAD"
 label_settings = SubResource("LabelSettings_evqqi")
 horizontal_alignment = 1
 
