@@ -156,7 +156,6 @@ script = ExtResource("4_nqow5")
 taurus_scene = ExtResource("5_m3mom")
 
 [node name="sonar_cover" type="ColorRect" parent="submarine" unique_id=1484355703]
-visible = false
 material = SubResource("ShaderMaterial_evqqi")
 offset_left = -10450.594
 offset_top = -4651.4805

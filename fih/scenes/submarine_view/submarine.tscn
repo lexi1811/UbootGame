@@ -16,12 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://c6cxcvsrpluan" path="res://assets/sprites/submarine_view/Iconchen_Herzchen.png" id="6_m8run"]
 [ext_resource type="Script" uid="uid://b0umpg83rpx4a" path="res://scenes/submarine_view/weapons.gd" id="7_aoagb"]
 [ext_resource type="AudioStream" uid="uid://d4hnei1usa7ud" path="res://assets/audio/music/the-buccaneers-haul.mp3" id="7_w8qwp"]
-[ext_resource type="Texture2D" uid="uid://cadrcsrv0xgiv" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_1.png" id="12_awcm0"]
-[ext_resource type="Texture2D" uid="uid://c2lvyoowyffqg" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_2.png" id="13_54e64"]
-[ext_resource type="Texture2D" uid="uid://c4epwivnbwvps" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_3.png" id="14_qfsc6"]
 [ext_resource type="Script" uid="uid://cic24oeonfmp0" path="res://scenes/submarine_view/shild.gd" id="9_pi08h"]
 [ext_resource type="Script" uid="uid://bcxltcup3veek" path="res://scenes/submarine_view/hp_laptops.gd" id="11_8hytp"]
+[ext_resource type="Texture2D" uid="uid://cadrcsrv0xgiv" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_1.png" id="12_awcm0"]
+[ext_resource type="Texture2D" uid="uid://c2lvyoowyffqg" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_2.png" id="13_54e64"]
 [ext_resource type="Script" uid="uid://ckmpxm7nrqf06" path="res://scenes/submarine_view/engine.gd" id="13_tn44x"]
+[ext_resource type="Texture2D" uid="uid://c4epwivnbwvps" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_3.png" id="14_qfsc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
 size = Vector2(573.0159, 34.792755)
@@ -82,6 +82,13 @@ size = Vector2(28.991348, 28.991394)
 
 [sub_resource type="LabelSettings" id="LabelSettings_evqqi"]
 font_size = 38
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbe85"]
+bg_color = Color(0.23137255, 0.23137255, 0.23137255, 0.39215687)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
 
 [node name="Submarine" type="Node2D" unique_id=1643673883]
 position = Vector2(-66, 0)
@@ -303,9 +310,9 @@ metadata/_edit_use_anchors_ = true
 modulate = Color(1, 0, 0, 1)
 z_index = 2
 offset_left = 159.0
-offset_top = 37.5
+offset_top = 48.5
 offset_right = 487.0
-offset_bottom = 90.5
+offset_bottom = 101.5
 pivot_offset = Vector2(160, 25)
 text = "System Damaged!"
 label_settings = SubResource("LabelSettings_evqqi")
@@ -324,6 +331,7 @@ offset_left = 124.0
 offset_top = 17.0
 offset_right = 519.0
 offset_bottom = 1047.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbe85")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1404248255]
