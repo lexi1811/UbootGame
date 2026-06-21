@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxkasoag61itr"
-path="res://.godot/imported/main menu.png-d16977ed807b961f48fa534f860ce5f4.ctex"
+uid="uid://du6ekr88kyii8"
+path="res://.godot/imported/WSP_Logo.png-581384dc407b71c7dff2fabac42c4839.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/menu_sprites/main menu.png"
-dest_files=["res://.godot/imported/main menu.png-d16977ed807b961f48fa534f860ce5f4.ctex"]
+source_file="res://assets/sprites/underwater_view/WSP_Logo.png"
+dest_files=["res://.godot/imported/WSP_Logo.png-581384dc407b71c7dff2fabac42c4839.ctex"]
 
 [params]
 
