@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://c6cxcvsrpluan" path="res://assets/sprites/submarine_view/Iconchen_Herzchen.png" id="6_m8run"]
 [ext_resource type="AudioStream" uid="uid://d4hnei1usa7ud" path="res://assets/audio/music/the-buccaneers-haul.mp3" id="7_w8qwp"]
+[ext_resource type="Texture2D" uid="uid://cadrcsrv0xgiv" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_1.png" id="12_awcm0"]
+[ext_resource type="Texture2D" uid="uid://c2lvyoowyffqg" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_2.png" id="13_54e64"]
+[ext_resource type="Texture2D" uid="uid://c4epwivnbwvps" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_3.png" id="14_qfsc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
 size = Vector2(573.0159, 34.792755)
@@ -108,7 +111,7 @@ scale = Vector2(0.5857145, 0.5857145)
 texture = ExtResource("5_m8run")
 
 [node name="HP_laptops" type="Sprite2D" parent="Uboot/Icons" unique_id=1372561885]
-position = Vector2(408.00003, 582)
+position = Vector2(403.00006, 582)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("6_m8run")
 
@@ -253,10 +256,15 @@ script = ExtResource("3_nosfk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1177419796]
 z_index = 2
-position = Vector2(345, 535)
+position = Vector2(381, 559)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("5_bfu6x")
+tex_idle = ExtResource("5_w8qwp")
+tex_repair_1 = ExtResource("12_awcm0")
+tex_repair_2 = ExtResource("13_54e64")
+tex_repair_3 = ExtResource("14_qfsc6")
+anim_speed = 0.13
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1316672258]
 position = Vector2(-3, -9.459961)
