@@ -5,7 +5,7 @@ var timeout: bool = false
 var move_tween: Tween
 
 @export var taurus_scene: PackedScene
-var explo_scene_sub: PackedScene = preload("res://scenes/underwater_view/explosion.tscn")
+var explo_scene_sub: PackedScene = preload("res://scenes/underwater_view/exploSub.tscn")
 
 # Nodes
 @onready var shield_sprite: Sprite2D = $ShieldSprite
@@ -114,8 +114,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 		var new_explosion = explo_scene_sub.instantiate()
 		new_explosion.global_position = global_position
-		new_explosion.global_position.x += 50
-		new_explosion.global_position.y += 10
+		new_explosion.global_position.x += 100
+		new_explosion.global_position.y += 15
 		new_explosion.z_index = 10
 		get_parent().add_child(new_explosion)
 		get_tree().create_timer(0.7).timeout.connect(new_explosion.queue_free)

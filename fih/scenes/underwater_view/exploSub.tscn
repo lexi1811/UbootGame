@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bhftmud4orky1"]
+
+[ext_resource type="Texture2D" uid="uid://b4bmlbj3hwuco" path="res://assets/sprites/underwater_view/Explosionschen.png" id="1_xlsfa"]
+
+[node name="ExploSub" type="Node2D" unique_id=1637162433]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=5433529]
+scale = Vector2(0.09383915, 0.093839176)
+texture = ExtResource("1_xlsfa")
