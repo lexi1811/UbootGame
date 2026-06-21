@@ -3,16 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://o3gu5e0urbhk" path="res://assets/sprites/underwater_view/ubootchen-innenraumchen-v1.png" id="1_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://dd84c48pppyft" path="res://assets/sprites/submarine_view/Iconchen_nachladen.png" id="2_j8jl6"]
 [ext_resource type="PackedScene" uid="uid://ct7qravw2u4rk" path="res://scenes/submarine_view/engineer.tscn" id="2_jafjb"]
+[ext_resource type="Script" uid="uid://cwwrw2b4rd2ux" path="res://scenes/submarine_view/nachladen.gd" id="3_10die"]
 [ext_resource type="Script" uid="uid://dpsctfx2eowm5" path="res://scenes/submarine_view/system_destroyer.gd" id="3_nosfk"]
 [ext_resource type="Texture2D" uid="uid://cn6prn0dty2bo" path="res://assets/sprites/submarine_view/Iconchen_Sonar.png" id="3_pir3x"]
 [ext_resource type="Texture2D" uid="uid://bktv2kg76gi4i" path="res://assets/sprites/submarine_view/Iconchen_Torpedochen.png" id="4_l1lxy"]
+[ext_resource type="Script" uid="uid://cv5villod5n26" path="res://scenes/submarine_view/sonar.gd" id="5_8cmbs"]
 [ext_resource type="Script" uid="uid://pa736jqtdvpw" path="res://scripts/submarine_view/engineer.gd" id="5_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://diaqibh82h1d" path="res://assets/sprites/submarine_view/Iconchen_Schils.png" id="5_m8run"]
 [ext_resource type="Texture2D" uid="uid://b2u4bhako2aiu" path="res://assets/sprites/submarine_view/Meowilein_weii.png" id="5_w8qwp"]
 [ext_resource type="Texture2D" uid="uid://de2gxl5cxlwxm" path="res://assets/sprites/submarine_view/Iconchen_motorchen.png" id="6_10die"]
 [ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://c6cxcvsrpluan" path="res://assets/sprites/submarine_view/Iconchen_Herzchen.png" id="6_m8run"]
+[ext_resource type="Script" uid="uid://b0umpg83rpx4a" path="res://scenes/submarine_view/weapons.gd" id="7_aoagb"]
 [ext_resource type="AudioStream" uid="uid://d4hnei1usa7ud" path="res://assets/audio/music/the-buccaneers-haul.mp3" id="7_w8qwp"]
+[ext_resource type="Script" uid="uid://cic24oeonfmp0" path="res://scenes/submarine_view/shild.gd" id="9_pi08h"]
+[ext_resource type="Script" uid="uid://bcxltcup3veek" path="res://scenes/submarine_view/hp_laptops.gd" id="11_8hytp"]
+[ext_resource type="Script" uid="uid://ckmpxm7nrqf06" path="res://scenes/submarine_view/engine.gd" id="13_tn44x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
 size = Vector2(573.0159, 34.792755)
@@ -88,34 +94,40 @@ position = Vector2(-977.14294, -1355.5613)
 scale = Vector2(3.0158732, 2.482713)
 
 [node name="Nachladen" type="Sprite2D" parent="Uboot/Icons" unique_id=1307634830]
-position = Vector2(323.25003, 249.25005)
+position = Vector2(326.25003, 249.25003)
 scale = Vector2(0.6392856, 0.6392856)
 texture = ExtResource("2_j8jl6")
+script = ExtResource("3_10die")
 
 [node name="Sonar" type="Sprite2D" parent="Uboot/Icons" unique_id=257731371]
 position = Vector2(241, 424)
 scale = Vector2(0.5857145, 0.5857145)
 texture = ExtResource("3_pir3x")
+script = ExtResource("5_8cmbs")
 
 [node name="weapons" type="Sprite2D" parent="Uboot/Icons" unique_id=1088263481]
-position = Vector2(413.99997, 416)
+position = Vector2(407.99988, 416)
 scale = Vector2(0.51428574, 0.51428574)
 texture = ExtResource("4_l1lxy")
+script = ExtResource("7_aoagb")
 
 [node name="Shild" type="Sprite2D" parent="Uboot/Icons" unique_id=2140323285]
 position = Vector2(253, 628.99994)
 scale = Vector2(0.5857145, 0.5857145)
 texture = ExtResource("5_m8run")
+script = ExtResource("9_pi08h")
 
 [node name="HP_laptops" type="Sprite2D" parent="Uboot/Icons" unique_id=1372561885]
-position = Vector2(408.00003, 582)
+position = Vector2(403.00003, 579)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("6_m8run")
+script = ExtResource("11_8hytp")
 
 [node name="Engine" type="Sprite2D" parent="Uboot/Icons" unique_id=100501071]
-position = Vector2(328.99997, 805.00006)
+position = Vector2(322.9999, 805.00006)
 scale = Vector2(0.49285713, 0.49285713)
 texture = ExtResource("6_10die")
+script = ExtResource("13_tn44x")
 
 [node name="Walls" type="StaticBody2D" parent="Uboot" unique_id=1118224993]
 collision_layer = 2
@@ -259,8 +271,8 @@ collision_mask = 2
 script = ExtResource("5_bfu6x")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1316672258]
-position = Vector2(-3, -9.459961)
-scale = Vector2(0.056203622, 0.056203622)
+position = Vector2(-12, -38.45996)
+scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_w8qwp")
 centered = false
 
@@ -271,10 +283,10 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_bfu6x")
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=316841537]
-offset_left = -10.0
-offset_top = -37.0
-offset_right = 49.0
-offset_bottom = -10.0
+offset_left = -7.0
+offset_top = -70.0
+offset_right = 52.0
+offset_bottom = -43.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1661508973]

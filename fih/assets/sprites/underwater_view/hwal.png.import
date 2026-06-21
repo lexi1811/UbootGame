@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxkasoag61itr"
-path="res://.godot/imported/main menu.png-d16977ed807b961f48fa534f860ce5f4.ctex"
+uid="uid://cawmjkveumw0b"
+path="res://.godot/imported/hwal.png-64046d32f0b4e1a82c42b49297848e09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/menu_sprites/main menu.png"
-dest_files=["res://.godot/imported/main menu.png-d16977ed807b961f48fa534f860ce5f4.ctex"]
+source_file="res://assets/sprites/underwater_view/hwal.png"
+dest_files=["res://.godot/imported/hwal.png-64046d32f0b4e1a82c42b49297848e09.ctex"]
 
 [params]
 

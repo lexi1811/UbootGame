@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cq334i24ketjj" path="res://assets/sprites/underwater_view/Hintergrundchen-1.png" id="1_2tbir"]
 [ext_resource type="Texture2D" uid="uid://dr6uig7b4r5ce" path="res://assets/sprites/underwater_view/Hintergrundchen-2.png" id="1_lvkv0"]
+[ext_resource type="Texture2D" uid="uid://du6ekr88kyii8" path="res://assets/sprites/underwater_view/WSP_Logo.png" id="2_lmugr"]
 [ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
 [ext_resource type="Texture2D" uid="uid://cep3gtabktyg1" path="res://assets/sprites/underwater_view/Hintergrundchen-3.png" id="3_s02rd"]
 [ext_resource type="Texture2D" uid="uid://deyixbwhqktet" path="res://assets/sprites/underwater_view/Hintergrundchen-4.png" id="4_lgo0a"]
@@ -17,6 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="9_7o7r8"]
 [ext_resource type="Texture2D" uid="uid://mkqdjs8nri1k" path="res://assets/sprites/underwater_view/luftbalse.png" id="9_lvkv0"]
 [ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="10_7o7r8"]
+[ext_resource type="Script" uid="uid://bicfhtpwcyroo" path="res://scenes/underwater_view/hawl.gd" id="19_xbe85"]
+
+[sub_resource type="Curve2D" id="Curve2D_lvwyf"]
+bake_interval = 84.2
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2736, 148, 0, 0, 0, 0, 2372, 174, 0, 0, 0, 0, 2253, 219, 0, 0, 0, 0, 2133, 295, 0, 0, 0, 0, 1969, 384, 0, 0, 0, 0, 1776, 440, 0, 0, 0, 0, 1599.26, 484.03134, 0, 0, 0, 0, 1483.0603, 502.70633, 0, 0, 0, 0, 1346, 515, 0, 0, 0, 0, 1157, 511, 0, 0, 0, 0, 991, 488, 0, 0, 0, 0, 869, 463, 0, 0, 0, 0, 757, 428, 0, 0, 0, 0, 597, 380, 0, 0, 0, 0, 394, 328, 0, 0, 0, 0, 174, 310, 0, 0, 0, 0, 31, 309, 0, 0, 0, 0, -51, 309, 0, 0, 0, 0, -462, 314)
+}
+point_count = 19
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lvwyf"]
+load_path = "res://.godot/imported/hwal.png-64046d32f0b4e1a82c42b49297848e09.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_evqqi"]
 shader = ExtResource("5_wopq6")
@@ -55,6 +67,32 @@ position = Vector2(1726.9998, 4.0888786e-05)
 scale = Vector2(0.48, 0.48)
 texture = ExtResource("1_2tbir")
 centered = false
+
+[node name="WspLogo" type="Sprite2D" parent="Backround_back" unique_id=864958973]
+modulate = Color(0.39232534, 0.39232537, 0.39232534, 0.18039216)
+position = Vector2(3576, 952)
+scale = Vector2(0.043, 0.044)
+texture = ExtResource("2_lmugr")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2104421260]
+z_index = -1
+position = Vector2(0, 403)
+curve = SubResource("Curve2D_lvwyf")
+script = ExtResource("19_xbe85")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1753470424]
+position = Vector2(1504.2557, 499.65964)
+rotation = 2.9822407
+progress = 1300.8939
+
+[node name="Hwal" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1566053992]
+self_modulate = Color(1, 1, 1, 0.23529412)
+z_index = 1
+position = Vector2(-3.7043457, -4.2748413)
+scale = Vector2(0.4, 0.4)
+texture = SubResource("CompressedTexture2D_lvwyf")
+flip_h = true
+flip_v = true
 
 [node name="backround_second_layer" type="Parallax2D" parent="." unique_id=1664817018]
 scale = Vector2(0.9999999, 0.9999999)
@@ -118,6 +156,7 @@ script = ExtResource("4_nqow5")
 taurus_scene = ExtResource("5_m3mom")
 
 [node name="sonar_cover" type="ColorRect" parent="submarine" unique_id=1484355703]
+visible = false
 material = SubResource("ShaderMaterial_evqqi")
 offset_left = -10450.594
 offset_top = -4651.4805
