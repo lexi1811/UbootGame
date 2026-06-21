@@ -209,6 +209,7 @@ scale = Vector2(0.12736274, 0.12538859)
 texture = ExtResource("7_wopq6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="submarine" unique_id=1505314351]
+volume_db = 10.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
 physics_material_override = SubResource("PhysicsMaterial_3r7xc")
