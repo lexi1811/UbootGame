@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b34wagd24354h"]
+
+[ext_resource type="Script" uid="uid://csfb731wbt21d" path="res://scripts/underwater_view/hamburger_whales.gd" id="1_5rch5"]
+[ext_resource type="Texture2D" uid="uid://b1mql5fs6ln6f" path="res://assets/sprites/underwater_view/hwal.png" id="2_tjmb4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ngtdu"]
+radius = 148.16545
+
+[node name="hamburger_whales" type="CharacterBody2D" unique_id=1228134605]
+script = ExtResource("1_5rch5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2002234209]
+position = Vector2(-22, -62)
+shape = SubResource("CircleShape2D_ngtdu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1689012765]
+position = Vector2(36.00001, -39)
+scale = Vector2(0.39296877, 0.44723266)
+texture = ExtResource("2_tjmb4")
