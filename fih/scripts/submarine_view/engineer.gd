@@ -69,6 +69,12 @@ func _physics_process(_delta):
 func _process(delta: float) -> void:
 	# Wir prüfen jetzt auch, ob der Spieler überhaupt in einem Raum ist,
 	# damit er nicht im Gang repariert und die Luft zusammenschraubt.
+	
+	if Input.is_action_pressed("player_repair"):
+		speed = 50
+	else:
+		speed = 300
+	
 	if Input.is_action_pressed("player_repair") and !player_moved and current_room != rooms.NONE:
 		
 		# Sound abspielen
