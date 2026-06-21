@@ -25,6 +25,8 @@ var weapons: bool = true
 var shieldActive: bool = false
 
 func _ready() -> void:
+	add_to_group("player_sub") 
+	
 	body_entered.connect(_on_body_entered)
 	game_state.system_destroyed.connect(_on_system_destroyed)
 	game_state.system_fixed.connect(_on_system_fixed)

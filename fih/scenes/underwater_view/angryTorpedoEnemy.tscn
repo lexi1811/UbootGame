@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fmgy70gdmu2g"]
+
+[ext_resource type="Texture2D" uid="uid://yh5feyq8iltf" path="res://assets/sprites/underwater_view/enemayTorp.png" id="1_kpgap"]
+[ext_resource type="Script" uid="uid://txhxfj4et38s" path="res://scenes/underwater_view/angry_torpedo_enemy.gd" id="1_uu5ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(74.50014, 24.5)
+
+[node name="AngryTorpedoEnemy" type="CharacterBody2D" unique_id=906178594]
+position = Vector2(-1, 0)
+script = ExtResource("1_uu5ag")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1514608723]
+position = Vector2(-32.292397, -0.4999962)
+scale = Vector2(0.07581232, 0.07581231)
+texture = ExtResource("1_kpgap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099765782]
+position = Vector2(-31.250069, -1.2499924)
+shape = SubResource("RectangleShape2D_3r7xc")
