@@ -35,7 +35,7 @@ size = Vector2(172, 3143)
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
 [node name="Backround_back" type="Parallax2D" parent="." unique_id=1305883843]
-repeat_size = Vector2(3458, 0)
+repeat_size = Vector2(3456, 0)
 autoscroll = Vector2(-80, 0)
 
 [node name="Hintergrundchen1" type="Sprite2D" parent="Backround_back" unique_id=2133549386]
@@ -136,6 +136,8 @@ shape = SubResource("RectangleShape2D_rutms")
 position = Vector2(174.17656, 10.555664)
 scale = Vector2(1, 0.39973137)
 texture = ExtResource("7_wopq6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="submarine" unique_id=1505314351]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
 physics_material_override = SubResource("PhysicsMaterial_3r7xc")

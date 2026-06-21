@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://pa736jqtdvpw" path="res://scripts/submarine_view/engineer.gd" id="5_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://b2u4bhako2aiu" path="res://assets/sprites/submarine_view/Meowilein_weii.png" id="5_w8qwp"]
 [ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
+[ext_resource type="AudioStream" uid="uid://d4hnei1usa7ud" path="res://assets/audio/music/the-buccaneers-haul.mp3" id="7_w8qwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evqqi"]
 size = Vector2(80.00001, 621.25024)
@@ -246,8 +247,10 @@ offset_right = 49.0
 offset_bottom = -10.0
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1661508973]
+
 [node name="system_damaged_label" type="Label" parent="." unique_id=949724492]
-modulate = Color(0.74509805, 0, 0, 1)
+modulate = Color(1, 0, 0, 1)
 z_index = 2
 offset_left = 159.0
 offset_top = 37.5
@@ -272,6 +275,11 @@ offset_top = 17.0
 offset_right = 519.0
 offset_bottom = 1047.0
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1404248255]
+stream = ExtResource("7_w8qwp")
+volume_db = -13.169
+autoplay = true
 
 [connection signal="body_entered" from="Uboot/reload_room" to="CharacterBody2D" method="_enter_reload"]
 [connection signal="body_entered" from="Uboot/sonar_room" to="CharacterBody2D" method="_enter_sonar"]
