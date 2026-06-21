@@ -22,7 +22,7 @@ func _on_timer_timeout() -> void:
 	
 	var roll: float = randf()
 	
-	if roll < 0.02 and time_elapsed >= krake_unlock_time:
+	if roll < 0.00 and time_elapsed >= krake_unlock_time:
 		selected_scene = krake_scene
 		random_lane = 0
 		
