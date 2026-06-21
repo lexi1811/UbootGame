@@ -4,14 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://bqyj5i7irv7km" path="res://assets/sprites/underwater_view/Torpedochen.png" id="2_ssire"]
 
 [node name="Taurus" type="CharacterBody2D" unique_id=1874101971]
+visibility_layer = 3
 scale = Vector2(0.041333333, 0.03716215)
+collision_layer = 5
+collision_mask = 5
+platform_wall_layers = 3
 script = ExtResource("2_ecngg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=990333343]
+visibility_layer = 3
 position = Vector2(2927.4192, 53.818237)
 scale = Vector2(2.278947, 2.278947)
 texture = ExtResource("2_ssire")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1823649245]
+visibility_layer = 3
 position = Vector2(24.19355, 0)
 polygon = PackedVector2Array(1862.9033, -403.6365, 3798.3875, -242.1819, 4016.1294, 0, 4016.1294, 107.6364, 3750.0002, 376.7274, 1862.9033, 457.45468)

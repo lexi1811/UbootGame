@@ -5,7 +5,7 @@ var timeout: bool = false
 var move_tween: Tween
 
 @export var taurus_scene: PackedScene
-var explo_scene_sub: PackedScene = preload("res://scenes/underwater_view/explosion.tscn")
+var explo_scene_sub: PackedScene = preload("res://scenes/underwater_view/exploSub.tscn")
 
 # Nodes
 @onready var shield_sprite: Sprite2D = $ShieldSprite
@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
 		game_state.schummeln = !game_state.schummeln
+		#game_state._destroy_system(global_enums.System.SONAR)
 	
 	var vorherige_reihe = row
 	
@@ -113,15 +114,15 @@ func _on_body_entered(body: Node2D) -> void:
 		if health == 0: return
 	
 		var new_explosion = explo_scene_sub.instantiate()
-		new_explosion.global_position = global_position
-		new_explosion.global_position.x += 50
-		new_explosion.global_position.y += 10
+		
+		add_child(new_explosion)
+		new_explosion.position = Vector2(110, 20)
 		new_explosion.z_index = 10
-		get_parent().add_child(new_explosion)
+		
 		get_tree().create_timer(0.7).timeout.connect(new_explosion.queue_free)
 	else:
 		game_state._destroy_system(global_enums.System.SHIELD)
-	body.queue_free() 
+	body.queue_free()
 
 func _on_system_destroyed(system: global_enums.System) -> void:
 	if system == global_enums.System.ENGINE:

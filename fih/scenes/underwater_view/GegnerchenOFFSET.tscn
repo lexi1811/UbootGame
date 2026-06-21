@@ -6,30 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://mkqdjs8nri1k" path="res://assets/sprites/underwater_view/luftbalse.png" id="4_vyjwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
-size = Vector2(109.5, 90)
+size = Vector2(118.5, 88)
 
 [sub_resource type="Curve" id="Curve_dgkcq"]
 _data = [Vector2(0.074576266, 0.03401363), 0.0, 0.0, 0, 0, Vector2(0.6372881, 0.659864), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="GegnerchenOffset" type="CharacterBody2D" unique_id=1126385830]
-position = Vector2(-1, -1)
+position = Vector2(-1, -3)
 script = ExtResource("1_kkbpp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=858693853]
-position = Vector2(-55.515068, -2.374998)
-scale = Vector2(0.093718596, 0.093718596)
+position = Vector2(-59.3819, 4.999998)
+scale = Vector2(0.10050251, 0.10050251)
 texture = ExtResource("1_aph4x")
 flip_h = true
 
 [node name="Propeller2" type="Sprite2D" parent="." unique_id=27904703]
-position = Vector2(-8.999998, 13.000001)
+position = Vector2(-9.999998, 20.000008)
 scale = Vector2(0.055071954, 0.091610044)
 texture = ExtResource("3_cnnhk")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264749437]
-position = Vector2(-53.25, -3)
+position = Vector2(-57.75, 10)
 shape = SubResource("RectangleShape2D_3r7xc")
 
 [node name="Bubbles" type="CPUParticles2D" parent="." unique_id=2112690429]

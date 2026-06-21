@@ -47,8 +47,9 @@ offset_left = 651.0
 offset_top = 198.0
 offset_right = 1420.0
 offset_bottom = 361.0
-text = "NIEDERLAGE 😪"
+text = "DEAD 💀"
 label_settings = SubResource("LabelSettings_evqqi")
+horizontal_alignment = 1
 
 [node name="Restart_Button" type="Button" parent="ColorRect" unique_id=1811133333]
 layout_mode = 0
