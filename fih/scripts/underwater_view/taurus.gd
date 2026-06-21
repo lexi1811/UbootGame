@@ -20,10 +20,10 @@ func _physics_process(delta: float) -> void:
 			game_state._enemy_killed(10)
 		if hit_object.is_in_group("haie"):
 			hit_object.queue_free()
-			game_state._enemy_killed(20)
+			game_state._enemy_killed(30)
 		if hit_object.is_in_group("walOffset"):
 			hit_object.queue_free()
-			game_state._enemy_killed(30)
+			game_state._enemy_killed(20)
 		elif hit_object.is_in_group("rightBorder"):
 			queue_free()
 		

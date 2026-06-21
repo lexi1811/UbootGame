@@ -1,82 +1,68 @@
 [gd_scene format=3 uid="uid://053fcjjssby1"]
 
-[ext_resource type="Texture2D" uid="uid://cx3sxyqigore5" path="res://assets/sprites/submarine_view/uboot.png" id="1_jafjb"]
+[ext_resource type="Texture2D" uid="uid://o3gu5e0urbhk" path="res://assets/sprites/underwater_view/ubootchen-innenraumchen-v1.png" id="1_bfu6x"]
 [ext_resource type="PackedScene" uid="uid://ct7qravw2u4rk" path="res://scenes/submarine_view/engineer.tscn" id="2_jafjb"]
 [ext_resource type="Script" uid="uid://dpsctfx2eowm5" path="res://scenes/submarine_view/system_destroyer.gd" id="3_nosfk"]
 [ext_resource type="Script" uid="uid://pa736jqtdvpw" path="res://scripts/submarine_view/engineer.gd" id="5_bfu6x"]
 [ext_resource type="Texture2D" uid="uid://b2u4bhako2aiu" path="res://assets/sprites/submarine_view/Meowilein_weii.png" id="5_w8qwp"]
 [ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evqqi"]
-size = Vector2(80.00001, 621.25024)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(573.0159, 34.792755)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_evqqi"]
-a = Vector2(-2.5000305, -30.000061)
-b = Vector2(-3.7500305, 227.49994)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a224e"]
+size = Vector2(41.19046, 132.85974)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_hc246"]
-a = Vector2(124.99994, 213.74994)
-b = Vector2(93.74994, 213.74994)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1lm"]
+size = Vector2(33.17456, 198.61688)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_72hq5"]
-a = Vector2(28.74997, 213.74994)
-b = Vector2(-3.7500305, 213.74994)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2x8h"]
+size = Vector2(459.36508, 39.792603)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rvf3h"]
-a = Vector2(-3.7500305, 356.24988)
-b = Vector2(-102.50003, 356.24988)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74b5i"]
+size = Vector2(138.73015, 37.275208)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_oh1sk"]
-a = Vector2(-2.5000305, 293.74988)
-b = Vector2(-3.7500305, 356.24988)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81emv"]
+size = Vector2(105.55562, 32.34436)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_r4147"]
-a = Vector2(-132.50003, -108.75006)
-b = Vector2(17.49997, -108.75006)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb3hv"]
+size = Vector2(120.634895, 34.792603)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_wxo6n"]
-a = Vector2(-3.7500305, -220.00006)
-b = Vector2(-2.5000305, -103.75006)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0go1"]
+size = Vector2(38.17456, 139.03186)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_qrvnt"]
-a = Vector2(-3.7500305, -341.25003)
-b = Vector2(-3.7500305, -295.00003)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nqpn"]
+size = Vector2(128.65079, 34.792603)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_bhcc8"]
-a = Vector2(-135.00003, -346.25003)
-b = Vector2(19.99997, -345.00003)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx7a5"]
+size = Vector2(81.42876, 37.27527)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_e2fjp"]
-a = Vector2(124.99994, -108.75006)
-b = Vector2(92.49994, -108.75006)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_x5rt3"]
-a = Vector2(126.24994, -343.75003)
-b = Vector2(94.99994, -343.75003)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a53jc"]
+size = Vector2(385.00003, 33.55121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72hq5"]
-size = Vector2(273.75, 218.74994)
+size = Vector2(881.7958, 474.33386)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvf3h"]
-size = Vector2(106.87503, 217.49995)
+size = Vector2(493.75528, 448.8819)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh1sk"]
-size = Vector2(108.75, 219.99995)
+size = Vector2(494.6927, 388.06403)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4147"]
-size = Vector2(121.249985, 446.24994)
+size = Vector2(474.15686, 462.98615)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxo6n"]
-size = Vector2(104.99995, 305.00006)
+size = Vector2(504.88113, 331.2554)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2fjp"]
-size = Vector2(111.875015, 288.75006)
+size = Vector2(390.6997, 268.51077)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhcc8"]
-size = Vector2(271.25, 156.87497)
+size = Vector2(672.4506, 289.46814)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfu6x"]
-size = Vector2(32.520813, 30.81372)
+size = Vector2(28.991348, 28.991394)
 
 [sub_resource type="LabelSettings" id="LabelSettings_evqqi"]
 font_size = 38
@@ -86,65 +72,69 @@ position = Vector2(-66, 0)
 
 [node name="Uboot" type="Sprite2D" parent="." unique_id=1326813057]
 z_index = 2
-position = Vector2(320.00003, 579.00006)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_jafjb")
+position = Vector2(324, 546)
+scale = Vector2(0.33157894, 0.40278518)
+texture = ExtResource("1_bfu6x")
 
 [node name="Walls" type="StaticBody2D" parent="Uboot" unique_id=1118224993]
 collision_layer = 2
 collision_mask = 2
 
-[node name="wall_right" type="CollisionShape2D" parent="Uboot/Walls" unique_id=2000653806]
-position = Vector2(166.24994, -72.50006)
-scale = Vector2(0.99999887, 0.99999887)
-shape = SubResource("RectangleShape2D_evqqi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Uboot/Walls" unique_id=485304721]
+position = Vector2(183.96826, -548.69696)
+shape = SubResource("RectangleShape2D_3r7xc")
 
-[node name="wall_left" type="CollisionShape2D" parent="Uboot/Walls" unique_id=2128983817]
-position = Vector2(-171.24997, -80.62506)
-scale = Vector2(0.99999946, 0.99999946)
-shape = SubResource("RectangleShape2D_evqqi")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Uboot/Walls" unique_id=320286223]
+position = Vector2(6.5476074, -481.0429)
+shape = SubResource("RectangleShape2D_a224e")
 
-[node name="wall_top" type="CollisionPolygon2D" parent="Uboot/Walls" unique_id=579180132]
-position = Vector2(0, -17.5)
-build_mode = 1
-polygon = PackedVector2Array(-131.25003, -375.00003, -107.50003, -467.50003, -58.75003, -536.25, -8.7500305, -558.75, 39.99997, -550, 84.99994, -505, 116.24994, -438.75003, 126.24994, -366.25003, 112.49994, -423.75003, 94.99994, -467.50003, 52.49997, -522.5, 14.9999695, -541.25, -30.00003, -536.25, -80.00003, -496.25, -108.75003, -442.50003)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1819282066]
+position = Vector2(1.5079346, -101.79126)
+shape = SubResource("RectangleShape2D_mv1lm")
 
-[node name="wall_bottom" type="CollisionPolygon2D" parent="Uboot/Walls" unique_id=32303651]
-polygon = PackedVector2Array(-92.50003, 423.74988, -125.00003, 238.74988, -101.25003, 489.99988, -61.25003, 527.4999, 1.2499695, 526.2499, 76.24997, 514.9999, 89.99994, 483.74988, 124.99994, 228.74994, 86.24994, 426.24988, 69.99997, 489.99988, 29.99997, 507.49988, -21.25003, 511.24988, -56.25003, 502.49988, -78.75003, 487.49988)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Uboot/Walls" unique_id=183102138]
+position = Vector2(-243.80951, -47.206055)
+shape = SubResource("RectangleShape2D_x2x8h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Uboot/Walls" unique_id=2021470944]
-shape = SubResource("SegmentShape2D_evqqi")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Uboot/Walls" unique_id=900930319]
+position = Vector2(72.38098, -105.53259)
+shape = SubResource("RectangleShape2D_74b5i")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1676567619]
-shape = SubResource("SegmentShape2D_hc246")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1170946514]
+position = Vector2(-402.6191, -543.7141)
+shape = SubResource("RectangleShape2D_81emv")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1686530863]
-shape = SubResource("SegmentShape2D_72hq5")
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Uboot/Walls" unique_id=253209161]
+position = Vector2(437.3017, -104.29126)
+shape = SubResource("RectangleShape2D_wb3hv")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Uboot/Walls" unique_id=33987817]
-shape = SubResource("SegmentShape2D_rvf3h")
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1539170101]
+position = Vector2(2.0238037, 250.75403)
+shape = SubResource("RectangleShape2D_y0go1")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1589827035]
-shape = SubResource("SegmentShape2D_oh1sk")
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Uboot/Walls" unique_id=2011942269]
+position = Vector2(59.32538, 280.5293)
+shape = SubResource("RectangleShape2D_0nqpn")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1110925411]
-shape = SubResource("SegmentShape2D_r4147")
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Uboot/Walls" unique_id=959537406]
+position = Vector2(387.53973, 284.25342)
+shape = SubResource("RectangleShape2D_fx7a5")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Uboot/Walls" unique_id=774188116]
-shape = SubResource("SegmentShape2D_wxo6n")
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1264332461]
+position = Vector2(-180.43652, 484.73242)
+shape = SubResource("RectangleShape2D_a53jc")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Uboot/Walls" unique_id=519523506]
-shape = SubResource("SegmentShape2D_qrvnt")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Uboot/Walls" unique_id=684484288]
+polygon = PackedVector2Array(-431.26987, -528.8179, -373.96826, -685.2288, -283.49207, -839.157, -114.60321, -926.052, 123.65082, -921.08655, 298.57147, -819.2953, 386.0318, -677.78064, 428.25397, -538.7487, 500.63495, -585.9203, 422.22223, -970.7408, -331.74606, -985.6371, -488.57147, -561.09314)
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1427680335]
-position = Vector2(0, 2.5)
-shape = SubResource("SegmentShape2D_bhcc8")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Uboot/Walls" unique_id=1136799941]
+polygon = PackedVector2Array(434.2857, -546.1969, 464.44452, -111.722046, 401.11115, 263.1676, 280.47626, 536.266, 349.84125, 580.95483, 542.8571, 59.585083, 503.65082, -553.645)
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1691623308]
-shape = SubResource("SegmentShape2D_e2fjp")
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Uboot/Walls" unique_id=203847504]
+polygon = PackedVector2Array(295.5556, 513.92163, 208.09528, 655.43616, 180.9524, 687.71155, 102.53967, 789.5028, 36.19049, 801.9164, -69.36511, 799.4335, -168.88892, 744.81384, -220.15875, 657.91895, -277.46033, 571.0239, -316.6667, 484.12903, -395.07938, 484.12903, -144.7619, 881.36316, 153.80951, 871.43225, 343.8095, 573.5067)
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Uboot/Walls" unique_id=1254936833]
-shape = SubResource("SegmentShape2D_x5rt3")
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Uboot/Walls" unique_id=1031194570]
+polygon = PackedVector2Array(-431.26987, -538.7487, -452.38098, -397.23407, -464.44446, -203.5824, -464.44446, -64.55054, -431.26987, 146.4801, -386.03177, 340.1317, -313.65082, 513.92163, -389.04764, 506.4735, -551.9048, 62.06787, -497.61908, -563.57587)
 
 [node name="reload_room" type="Area2D" parent="Uboot" unique_id=1647955569]
 collision_layer = 2
@@ -152,8 +142,8 @@ collision_mask = 2
 
 [node name="reload_room" type="CollisionShape2D" parent="Uboot/reload_room" unique_id=407424220]
 physics_interpolation_mode = 2
-position = Vector2(-8.7500305, -459.37494)
-scale = Vector2(0.9999997, 0.9999997)
+position = Vector2(17.514832, -793.159)
+scale = Vector2(0.99999976, 0.9999997)
 shape = SubResource("RectangleShape2D_72hq5")
 debug_color = Color(0.61931896, 0.53434014, 0.071139134, 0.41960785)
 
@@ -162,8 +152,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="sonar_room" type="CollisionShape2D" parent="Uboot/sonar_room" unique_id=1450087001]
-position = Vector2(-72.18753, -227.49997)
-scale = Vector2(0.99999946, 0.99999946)
+position = Vector2(-274.86856, -296.43945)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_rvf3h")
 debug_color = Color(0.55212265, 0.5618311, 0.112284355, 0.41960785)
 
@@ -172,8 +162,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="weapon_room" type="CollisionShape2D" parent="Uboot/weapon_room" unique_id=1473959569]
-position = Vector2(64.37497, -228.74997)
-scale = Vector2(0.9999995, 0.9999995)
+position = Vector2(286.50793, -327.71808)
+scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_oh1sk")
 debug_color = Color(0.5739218, 0.54903984, 0.20884061, 0.41960785)
 
@@ -182,7 +172,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="shield_room" type="CollisionShape2D" parent="Uboot/shield_room" unique_id=955255976]
-position = Vector2(-74.37503, 124.37494)
+position = Vector2(-266.57242, 220.36084)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_r4147")
 debug_color = Color(0.5741291, 0.5516641, 0.16546234, 0.41960785)
@@ -192,8 +182,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="health_room" type="CollisionShape2D" parent="Uboot/health_room" unique_id=708793066]
-position = Vector2(61.24997, 53.74994)
-scale = Vector2(0.99999946, 0.99999946)
+position = Vector2(278.35333, 90.091675)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_wxo6n")
 debug_color = Color(0.5691208, 0.554837, 0.12724823, 0.41960785)
 
@@ -202,13 +192,13 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="engine_room" type="CollisionShape2D" parent="Uboot/engine_room" unique_id=2052492343]
-position = Vector2(62.8125, 370.62488)
+position = Vector2(229.20636, 436.95743)
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_e2fjp")
 debug_color = Color(0.5674374, 0.55655736, 0.07779399, 0.41960785)
 
 [node name="engine_room2" type="CollisionShape2D" parent="Uboot/engine_room" unique_id=1111168547]
-position = Vector2(13.7499695, 445.31238)
+position = Vector2(7.5844116, 659.6649)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_bhcc8")
 debug_color = Color(0.59417266, 0.54507667, 0.09949423, 0.41960785)
@@ -231,14 +221,14 @@ script = ExtResource("5_bfu6x")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1316672258]
 position = Vector2(-3, -9.459961)
-scale = Vector2(0.050752908, 0.050752908)
+scale = Vector2(0.056203622, 0.056203622)
 texture = ExtResource("5_w8qwp")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1182816554]
-position = Vector2(19.396454, 17.60785)
+position = Vector2(22.00003, 23.5)
 rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_bfu6x")
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D" unique_id=316841537]

@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cbnxygvhndaa6" path="res://scripts/underwater_view/hamburger_wale.gd" id="2_ebcee"]
 [ext_resource type="Texture2D" uid="uid://bavptgnag3wua" path="res://assets/sprites/underwater_view/Gegnerchen.png" id="2_jmmen"]
+[ext_resource type="Texture2D" uid="uid://bk2hst5ukpn03" path="res://assets/sprites/underwater_view/Ubootchen_prop.png" id="3_xs3tr"]
+[ext_resource type="Texture2D" uid="uid://mkqdjs8nri1k" path="res://assets/sprites/underwater_view/luftbalse.png" id="4_jha7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmmen"]
-size = Vector2(1023.3476, 1727.6895)
+size = Vector2(961.05725, 1727.6895)
+
+[sub_resource type="Curve" id="Curve_cq1kc"]
+_data = [Vector2(0.074576266, 0.03401363), 0.0, 0.0, 0, 0, Vector2(0.6372881, 0.659864), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="HamburgerWale" type="CharacterBody2D" unique_id=1328869683]
 position = Vector2(-69.15625, -14.3125)
@@ -17,7 +23,29 @@ scale = Vector2(0.86106414, 1.6440697)
 texture = ExtResource("2_jmmen")
 flip_h = true
 
+[node name="Propeller2" type="Sprite2D" parent="." unique_id=946976239]
+position = Vector2(508.61523, 256.29126)
+scale = Vector2(0.8089698, 1.3456897)
+texture = ExtResource("3_xs3tr")
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1829228778]
-position = Vector2(103.724945, 16.912537)
-scale = Vector2(0.99999917, 0.9999998)
+position = Vector2(63.681152, 16.912537)
+scale = Vector2(0.99999905, 0.9999998)
 shape = SubResource("RectangleShape2D_jmmen")
+
+[node name="Bubbles" type="CPUParticles2D" parent="." unique_id=1732513571]
+visible = false
+position = Vector2(514.9844, 261.21875)
+scale = Vector2(0.05, 0.05)
+amount = 30
+texture = ExtResource("4_jha7d")
+lifetime = 2.0
+direction = Vector2(-1, 0)
+spread = 60.23
+gravity = Vector2(100, 0)
+initial_velocity_min = 273.97
+initial_velocity_max = 273.97
+angular_velocity_min = 4.62
+angular_velocity_max = 133.85
+scale_amount_curve = SubResource("Curve_cq1kc")
