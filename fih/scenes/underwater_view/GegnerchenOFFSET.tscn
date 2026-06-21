@@ -2,9 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://ddlud2ileav4" path="res://assets/sprites/underwater_view/GegnerchenOFFSET.png" id="1_aph4x"]
 [ext_resource type="Script" uid="uid://blrae6yxs6td4" path="res://scenes/underwater_view/gegnerchen_offset.gd" id="1_kkbpp"]
+[ext_resource type="Texture2D" uid="uid://bk2hst5ukpn03" path="res://assets/sprites/underwater_view/Ubootchen_prop.png" id="3_cnnhk"]
+[ext_resource type="Texture2D" uid="uid://mkqdjs8nri1k" path="res://assets/sprites/underwater_view/luftbalse.png" id="4_vyjwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
 size = Vector2(109.5, 90)
+
+[sub_resource type="Curve" id="Curve_dgkcq"]
+_data = [Vector2(0.074576266, 0.03401363), 0.0, 0.0, 0, 0, Vector2(0.6372881, 0.659864), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="GegnerchenOffset" type="CharacterBody2D" unique_id=1126385830]
 position = Vector2(-1, -1)
@@ -16,6 +22,28 @@ scale = Vector2(0.093718596, 0.093718596)
 texture = ExtResource("1_aph4x")
 flip_h = true
 
+[node name="Propeller2" type="Sprite2D" parent="." unique_id=27904703]
+position = Vector2(-8.999998, 13.000001)
+scale = Vector2(0.055071954, 0.091610044)
+texture = ExtResource("3_cnnhk")
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264749437]
 position = Vector2(-53.25, -3)
 shape = SubResource("RectangleShape2D_3r7xc")
+
+[node name="Bubbles" type="CPUParticles2D" parent="." unique_id=2112690429]
+visible = false
+position = Vector2(514.9844, 261.21875)
+scale = Vector2(0.05, 0.05)
+amount = 30
+texture = ExtResource("4_vyjwx")
+lifetime = 2.0
+direction = Vector2(-1, 0)
+spread = 60.23
+gravity = Vector2(100, 0)
+initial_velocity_min = 273.97
+initial_velocity_max = 273.97
+angular_velocity_min = 4.62
+angular_velocity_max = 133.85
+scale_amount_curve = SubResource("Curve_dgkcq")

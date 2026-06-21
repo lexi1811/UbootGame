@@ -12,14 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://cijkwb2a2k561" path="res://assets/sprites/underwater_view/Ubootchen.png" id="6_m3mom"]
 [ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
 [ext_resource type="Texture2D" uid="uid://d3jk8jw16hw2t" path="res://assets/sprites/underwater_view/shild.png" id="7_wopq6"]
+[ext_resource type="Texture2D" uid="uid://bk2hst5ukpn03" path="res://assets/sprites/underwater_view/Ubootchen_prop.png" id="8_2tbir"]
 [ext_resource type="Texture2D" uid="uid://dn0p74vnwgf3s" path="res://assets/sprites/underwater_view/progress_bg.png" id="8_ki0f0"]
 [ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="9_7o7r8"]
+[ext_resource type="Texture2D" uid="uid://mkqdjs8nri1k" path="res://assets/sprites/underwater_view/luftbalse.png" id="9_lvkv0"]
 [ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="10_7o7r8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_evqqi"]
 shader = ExtResource("5_wopq6")
 shader_parameter/hole_radius = 0.1190000056525
 shader_parameter/feather = 0.15
+
+[sub_resource type="Curve" id="Curve_lvkv0"]
+_data = [Vector2(0.074576266, 0.03401363), 0.0, 0.0, 0, 0, Vector2(0.6372881, 0.659864), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
 size = Vector2(1443.1772, 425.74063)
@@ -125,6 +131,27 @@ script = ExtResource("6_1krwu")
 position = Vector2(273.70605, 7.0371094)
 scale = Vector2(1.2406498, 0.40452853)
 texture = ExtResource("6_m3mom")
+
+[node name="Propeller" type="Sprite2D" parent="submarine" unique_id=1754079016]
+position = Vector2(-389.2129, 72.1297)
+scale = Vector2(1.3810177, 0.42887402)
+texture = ExtResource("8_2tbir")
+
+[node name="Bubbles" type="CPUParticles2D" parent="submarine" unique_id=808730777]
+visible = false
+position = Vector2(-472.76465, 73.888916)
+scale = Vector2(0.05, 0.05)
+amount = 50
+texture = ExtResource("9_lvkv0")
+lifetime = 3.0
+direction = Vector2(-1, 0)
+spread = 60.23
+gravity = Vector2(-100, 0)
+initial_velocity_min = 273.97
+initial_velocity_max = 273.97
+angular_velocity_min = 4.62
+angular_velocity_max = 133.85
+scale_amount_curve = SubResource("Curve_lvkv0")
 
 [node name="CollisionSubmarine" type="CollisionShape2D" parent="submarine" unique_id=1598191945]
 position = Vector2(265.4121, 8.796387)
