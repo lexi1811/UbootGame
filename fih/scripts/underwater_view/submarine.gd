@@ -26,12 +26,13 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")		
 
 func _process(delta: float) -> void:	
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
-		game_state._take_damage(100)
+		#game_state.schummeln = !game_state.schummeln
+		game_state._destroy_system(global_enums.System.SONAR)
 	
 	var vorherige_reihe = row
 	
@@ -85,7 +86,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if !shield or !shieldActive:
-		game_state._take_damage(1)
+		var health = game_state._take_damage(1)
+	
+		if health == 0: return
 	
 		var new_explosion = explo_scene_sub.instantiate()
 		new_explosion.global_position = global_position
@@ -94,7 +97,8 @@ func _on_body_entered(body: Node2D) -> void:
 		new_explosion.z_index = 10
 		get_parent().add_child(new_explosion)
 		get_tree().create_timer(0.7).timeout.connect(new_explosion.queue_free)
-		
+	else:
+		game_state._destroy_system(global_enums.System.SHIELD)
 	body.queue_free() 
 
 func _on_system_destroyed(system: global_enums.System) -> void:
@@ -126,7 +130,7 @@ func _on_system_fixed(system: global_enums.System) -> void:
 		print("U-Boot-System: Waffen sind wieder einsatzbereit!")
 
 func _on_game_over() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_over/game_over.tscn")
-
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over/game_over.tscn")
+	
 func _on_timer_timeout() -> void:
 	timeout = false

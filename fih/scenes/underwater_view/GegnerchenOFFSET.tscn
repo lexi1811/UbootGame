@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cccyf2dsyaqin"]
+
+[ext_resource type="Texture2D" uid="uid://ddlud2ileav4" path="res://assets/sprites/underwater_view/GegnerchenOFFSET.png" id="1_aph4x"]
+[ext_resource type="Script" uid="uid://blrae6yxs6td4" path="res://scenes/underwater_view/gegnerchen_offset.gd" id="1_kkbpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
+size = Vector2(109.5, 90)
+
+[node name="GegnerchenOffset" type="CharacterBody2D" unique_id=1126385830]
+position = Vector2(-1, -1)
+script = ExtResource("1_kkbpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=858693853]
+position = Vector2(-55.515068, -2.374998)
+scale = Vector2(0.093718596, 0.093718596)
+texture = ExtResource("1_aph4x")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1264749437]
+position = Vector2(-53.25, -3)
+shape = SubResource("RectangleShape2D_3r7xc")
