@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b2u4bhako2aiu" path="res://assets/sprites/submarine_view/Meowilein_weii.png" id="5_w8qwp"]
 [ext_resource type="Texture2D" uid="uid://de2gxl5cxlwxm" path="res://assets/sprites/submarine_view/Iconchen_motorchen.png" id="6_10die"]
 [ext_resource type="Script" uid="uid://cl2r5qwor28rj" path="res://scenes/submarine_view/system_damaged_label.gd" id="6_bfu6x"]
+[ext_resource type="Texture2D" uid="uid://c6cxcvsrpluan" path="res://assets/sprites/submarine_view/Iconchen_Herzchen.png" id="6_m8run"]
 [ext_resource type="AudioStream" uid="uid://d4hnei1usa7ud" path="res://assets/audio/music/the-buccaneers-haul.mp3" id="7_w8qwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
@@ -107,6 +108,9 @@ scale = Vector2(0.5857145, 0.5857145)
 texture = ExtResource("5_m8run")
 
 [node name="HP_laptops" type="Sprite2D" parent="Uboot/Icons" unique_id=1372561885]
+position = Vector2(408.00003, 582)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_m8run")
 
 [node name="Engine" type="Sprite2D" parent="Uboot/Icons" unique_id=100501071]
 position = Vector2(328.99997, 805.00006)
