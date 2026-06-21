@@ -103,6 +103,10 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if !shield or !shieldActive:
 		var health = game_state._take_damage(1)
+		
+		var sfx = preload("res://assets/audio/sfx/submarine-hit.ogg")
+		$AudioStreamPlayer2D.stream = sfx
+		$AudioStreamPlayer2D.play()
 	
 		if health == 0: return
 	

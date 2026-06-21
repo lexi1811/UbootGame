@@ -13,14 +13,6 @@ font_size = 60
 
 [node name="GameOver" type="Node2D" unique_id=32512584]
 
-[node name="Points" type="Label" parent="." unique_id=167648266]
-offset_left = 1480.0
-offset_top = 31.0
-offset_right = 1570.4348
-offset_bottom = 83.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=408747280]
 z_index = 1
 offset_left = -50.0

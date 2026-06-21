@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://b3bbvn5t0sges"]
 
-[ext_resource type="Texture2D" uid="uid://degjoccesbiy" path="res://assets/sprites/underwater_view/Hintergrundchen.png" id="1_7o7r8"]
+[ext_resource type="Texture2D" uid="uid://cq334i24ketjj" path="res://assets/sprites/underwater_view/Hintergrundchen-1.png" id="1_2tbir"]
+[ext_resource type="Texture2D" uid="uid://dr6uig7b4r5ce" path="res://assets/sprites/underwater_view/Hintergrundchen-2.png" id="1_lvkv0"]
 [ext_resource type="Script" uid="uid://ba20geunjo8gq" path="res://scripts/underwater_view/spawner.gd" id="3_78gii"]
+[ext_resource type="Texture2D" uid="uid://cep3gtabktyg1" path="res://assets/sprites/underwater_view/Hintergrundchen-3.png" id="3_s02rd"]
+[ext_resource type="Texture2D" uid="uid://deyixbwhqktet" path="res://assets/sprites/underwater_view/Hintergrundchen-4.png" id="4_lgo0a"]
 [ext_resource type="Script" uid="uid://dgo1lejjcduou" path="res://scripts/underwater_view/submarine.gd" id="4_nqow5"]
 [ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="5_m3mom"]
 [ext_resource type="Shader" uid="uid://c65dfp54er3nf" path="res://scenes/underwater_view/sonar.gdshader" id="5_wopq6"]
@@ -37,24 +40,70 @@ size = Vector2(172, 3143)
 
 [node name="Ocean View" type="Node2D" unique_id=135139133]
 
-[node name="background_scroller" type="Parallax2D" parent="." unique_id=455649127]
-scale = Vector2(0.99999994, 0.99999994)
+[node name="Backround_back" type="Parallax2D" parent="." unique_id=1305883843]
+repeat_size = Vector2(3456, 0)
+autoscroll = Vector2(-80, 0)
+
+[node name="Hintergrundchen1" type="Sprite2D" parent="Backround_back" unique_id=2133549386]
+position = Vector2(-0.9999466, 4.0888786e-05)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_2tbir")
+centered = false
+
+[node name="Hintergrundchen2" type="Sprite2D" parent="Backround_back" unique_id=2072619798]
+position = Vector2(1726.9998, 4.0888786e-05)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_2tbir")
+centered = false
+
+[node name="backround_second_layer" type="Parallax2D" parent="." unique_id=1664817018]
+scale = Vector2(0.9999999, 0.9999999)
 repeat_size = Vector2(3458, 0)
 autoscroll = Vector2(-100, 0)
 
-[node name="background2" type="Sprite2D" parent="background_scroller" unique_id=1970929479]
-position = Vector2(0, -1.66893e-06)
+[node name="Hintergrundchen2" type="Sprite2D" parent="backround_second_layer" unique_id=1804933610]
+position = Vector2(-0.999938, 0.9999713)
 scale = Vector2(0.48, 0.48)
-texture = ExtResource("1_7o7r8")
+texture = ExtResource("1_lvkv0")
 centered = false
 
-[node name="background3" type="Sprite2D" parent="background_scroller" unique_id=959118194]
-position = Vector2(1728.9999, 0)
+[node name="Hintergrundchen3" type="Sprite2D" parent="backround_second_layer" unique_id=1526333455]
+position = Vector2(1728.0004, 0.9999713)
 scale = Vector2(0.48, 0.48)
-texture = ExtResource("1_7o7r8")
+texture = ExtResource("1_lvkv0")
+centered = false
+
+[node name="background_third_layer" type="Parallax2D" parent="." unique_id=455649127]
+scale = Vector2(0.99999994, 0.99999994)
+repeat_size = Vector2(3458, 0)
+autoscroll = Vector2(-120, 0)
+
+[node name="Hintergrundchen3" type="Sprite2D" parent="background_third_layer" unique_id=904531540]
+position = Vector2(0.00012040138, 6.0915947e-05)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("3_s02rd")
+centered = false
+
+[node name="Hintergrundchen4" type="Sprite2D" parent="background_third_layer" unique_id=1933252681]
+position = Vector2(1738.0002, 6.0915947e-05)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("3_s02rd")
+centered = false
+
+[node name="Hintergrundchen5" type="Sprite2D" parent="background_third_layer" unique_id=527753279]
+position = Vector2(-0.9998779, 0.99999464)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("4_lgo0a")
+centered = false
+
+[node name="Hintergrundchen6" type="Sprite2D" parent="background_third_layer" unique_id=1205031145]
+position = Vector2(1727.9999, 0.9999947)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("4_lgo0a")
 centered = false
 
 [node name="enemy_spawner" type="Node2D" parent="." unique_id=2073450446]
+z_index = 2
 position = Vector2(2048, 20)
 script = ExtResource("3_78gii")
 
@@ -69,6 +118,7 @@ script = ExtResource("4_nqow5")
 taurus_scene = ExtResource("5_m3mom")
 
 [node name="sonar_cover" type="ColorRect" parent="submarine" unique_id=1484355703]
+visible = false
 material = SubResource("ShaderMaterial_evqqi")
 offset_left = -10450.594
 offset_top = -4651.4805
@@ -113,6 +163,8 @@ shape = SubResource("RectangleShape2D_rutms")
 position = Vector2(174.17656, 10.555664)
 scale = Vector2(1, 0.39973137)
 texture = ExtResource("7_wopq6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="submarine" unique_id=1505314351]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1006326410]
 physics_material_override = SubResource("PhysicsMaterial_3r7xc")
