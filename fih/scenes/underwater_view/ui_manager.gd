@@ -11,11 +11,11 @@ func _ready() -> void:
 	
 	health_bar.value = game_state.health
 	ammo_count.value = game_state.amunition
-	points.text = "Punkte: " + str(game_state.pointsSum)
+	points.text = "Points: " + str(game_state.pointsSum)
 	points.z_index = 10
 
 func _on_points_changed(pointsSum: int) -> void:
-	points.text = "Punkte: " + str(pointsSum)
+	points.text = "Points: " + str(pointsSum)
 	
 	var tween = create_tween()
 	

@@ -14,10 +14,11 @@
 [ext_resource type="Script" uid="uid://b1hdthfqrqkf5" path="res://scenes/underwater_view/ui_manager.gd" id="7_78gii"]
 [ext_resource type="Texture2D" uid="uid://d3jk8jw16hw2t" path="res://assets/sprites/underwater_view/shild.png" id="7_wopq6"]
 [ext_resource type="Texture2D" uid="uid://bk2hst5ukpn03" path="res://assets/sprites/underwater_view/Ubootchen_prop.png" id="8_2tbir"]
-[ext_resource type="Texture2D" uid="uid://dn0p74vnwgf3s" path="res://assets/sprites/underwater_view/progress_bg.png" id="8_ki0f0"]
-[ext_resource type="Texture2D" uid="uid://c2db2mug01flm" path="res://assets/sprites/underwater_view/progress_fg.png" id="9_7o7r8"]
 [ext_resource type="Texture2D" uid="uid://mkqdjs8nri1k" path="res://assets/sprites/underwater_view/luftbalse.png" id="9_lvkv0"]
-[ext_resource type="Texture2D" uid="uid://j4p51gi8jpyq" path="res://assets/sprites/underwater_view/progress_fg_ammo.png" id="10_7o7r8"]
+[ext_resource type="Texture2D" uid="uid://dfadkjcqndm1p" path="res://assets/sprites/underwater_view/progress_leben_leer.png" id="15_lmugr"]
+[ext_resource type="Texture2D" uid="uid://brmdjxvuiq6fo" path="res://assets/sprites/underwater_view/progress_leben_voll.png" id="16_lvwyf"]
+[ext_resource type="Texture2D" uid="uid://b6e16mjyx45ro" path="res://assets/sprites/underwater_view/progress_torp_leer.png" id="17_lmugr"]
+[ext_resource type="Texture2D" uid="uid://cqti5mx8f04cy" path="res://assets/sprites/underwater_view/progress_torp_full.png" id="18_lvwyf"]
 [ext_resource type="Script" uid="uid://bicfhtpwcyroo" path="res://scenes/underwater_view/hawl.gd" id="19_xbe85"]
 
 [sub_resource type="Curve2D" id="Curve2D_lvwyf"]
@@ -40,7 +41,7 @@ _data = [Vector2(0.074576266, 0.03401363), 0.0, 0.0, 0, 0, Vector2(0.6372881, 0.
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rutms"]
-size = Vector2(1443.1772, 425.74063)
+size = Vector2(139, 112)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3r7xc"]
 
@@ -149,29 +150,33 @@ script = ExtResource("3_78gii")
 autostart = true
 
 [node name="submarine" type="Area2D" parent="." unique_id=149659679]
+visibility_layer = 3
 z_index = 1
 position = Vector2(750, 200.99998)
-scale = Vector2(0.12056731, 0.28421056)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("4_nqow5")
 taurus_scene = ExtResource("5_m3mom")
 
 [node name="sonar_cover" type="ColorRect" parent="submarine" unique_id=1484355703]
 material = SubResource("ShaderMaterial_evqqi")
-offset_left = -10450.594
-offset_top = -4651.4805
-offset_right = 12988.598
-offset_bottom = 4764.073
+offset_left = -1161.0
+offset_top = -961.0
+offset_right = 1443.0
+offset_bottom = 1015.0
 color = Color(0.20080861, 0.20080861, 0.20080861, 1)
 script = ExtResource("6_1krwu")
 
 [node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1173671757]
-position = Vector2(273.70605, 7.0371094)
-scale = Vector2(1.2406498, 0.40452853)
+visibility_layer = 3
+position = Vector2(33.728027, 4.75)
+scale = Vector2(0.12961063, 0.12961064)
 texture = ExtResource("6_m3mom")
 
 [node name="Propeller" type="Sprite2D" parent="submarine" unique_id=1754079016]
-position = Vector2(-389.2129, 72.1297)
-scale = Vector2(1.3810177, 0.42887402)
+visibility_layer = 3
+position = Vector2(-35.625, 26.27893)
+scale = Vector2(0.12603308, 0.12603307)
 texture = ExtResource("8_2tbir")
 
 [node name="Bubbles" type="CPUParticles2D" parent="submarine" unique_id=808730777]
@@ -191,14 +196,16 @@ angular_velocity_max = 133.85
 scale_amount_curve = SubResource("Curve_lvkv0")
 
 [node name="CollisionSubmarine" type="CollisionShape2D" parent="submarine" unique_id=1598191945]
-position = Vector2(265.4121, 8.796387)
+visibility_layer = 3
+position = Vector2(30.5, 12.000015)
 shape = SubResource("RectangleShape2D_rutms")
 
 [node name="Timer" type="Timer" parent="submarine" unique_id=708468079]
 
 [node name="ShieldSprite" type="Sprite2D" parent="submarine" unique_id=1057004287]
-position = Vector2(174.17656, 10.555664)
-scale = Vector2(1, 0.39973137)
+visibility_layer = 3
+position = Vector2(19.500023, 6.000022)
+scale = Vector2(0.12736274, 0.12538859)
 texture = ExtResource("7_wopq6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="submarine" unique_id=1505314351]
@@ -219,31 +226,31 @@ shape = SubResource("RectangleShape2D_3r7xc")
 script = ExtResource("7_78gii")
 
 [node name="Points" type="Label" parent="CanvasLayer" unique_id=214214654]
-offset_left = 1480.0
-offset_top = 31.0
-offset_right = 1570.4348
-offset_bottom = 83.0
+offset_left = 1453.0
+offset_top = 10.0
+offset_right = 1543.4348
+offset_bottom = 62.0
 pivot_offset = Vector2(45, 25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=397621858]
-offset_left = 546.0
-offset_top = 18.0
-offset_right = 844.0
-offset_bottom = 80.0
+offset_left = 1689.0
+offset_top = 9.0
+offset_right = 1911.0
+offset_bottom = 56.0
 max_value = 5.0
-texture_under = ExtResource("8_ki0f0")
-texture_progress = ExtResource("9_7o7r8")
+texture_under = ExtResource("15_lmugr")
+texture_progress = ExtResource("16_lvwyf")
 
 [node name="AmmoCount" type="TextureProgressBar" parent="CanvasLayer" unique_id=1783031375]
-offset_left = 883.0
-offset_top = 20.0
-offset_right = 1181.0
-offset_bottom = 78.0
+offset_left = 1685.0
+offset_top = 71.0
+offset_right = 1907.0
+offset_bottom = 118.0
 max_value = 5.0
-texture_under = ExtResource("8_ki0f0")
-texture_progress = ExtResource("10_7o7r8")
+texture_under = ExtResource("17_lmugr")
+texture_progress = ExtResource("18_lvwyf")
 
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]

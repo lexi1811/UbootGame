@@ -3,22 +3,18 @@
 [ext_resource type="Script" uid="uid://bjfiiycufqvwr" path="res://scripts/underwater_view/shark.gd" id="1_7bkay"]
 [ext_resource type="Texture2D" uid="uid://d2p6q525d2qc2" path="res://assets/sprites/underwater_view/haichen.png" id="2_7bkay"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a224e"]
-radius = 17.0
-height = 168.0
-
 [node name="shark" type="CharacterBody2D" unique_id=1754415973]
 visibility_layer = 2
 position = Vector2(-7, 0)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_7bkay")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832719834]
+visibility_layer = 2
 position = Vector2(-77.68014, -6)
 scale = Vector2(0.11051962, 0.1013159)
 texture = ExtResource("2_7bkay")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872184037]
-visibility_layer = 2
-position = Vector2(-92, 3)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_a224e")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=481226158]
+polygon = PackedVector2Array(-4, 28, -3, 30, -33, 9, -114, 17, -109, 42, -143, 17, -178, 17, -184, 8, -163, -9, -131, -23, -99, -52, -98, -20, -28, -8, 20, -30, -14, 5, -4, 30)
