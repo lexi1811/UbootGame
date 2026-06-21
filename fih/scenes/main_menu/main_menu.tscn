@@ -1,49 +1,66 @@
 [gd_scene format=3 uid="uid://cbgjm2cwaxa2i"]
 
 [ext_resource type="Script" uid="uid://dfsqbyfwjkfdt" path="res://main_menu.gd" id="1_wem23"]
-[ext_resource type="Texture2D" uid="uid://de4u5i8ncmwxf" path="res://assets/sprites/menu_sprites/main menu.png" id="6_3ovsr"]
+[ext_resource type="Texture2D" uid="uid://dxkasoag61itr" path="res://assets/sprites/menu_sprites/main menu.png" id="6_3ovsr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob46e"]
 bg_color = Color(0.31260636, 0.31260636, 0.31260636, 0.45490196)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqeha"]
+bg_color = Color(0.4862745, 0.4862745, 0.4862745, 0.45490196)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ebjn"]
+bg_color = Color(0.4880544, 0.48805398, 0.48805404, 0.45490196)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
 
 [node name="main_menu" type="Node2D" unique_id=1392293479]
 script = ExtResource("1_wem23")
 
 [node name="MainMenu" type="Sprite2D" parent="." unique_id=716469696]
 z_index = -1
-position = Vector2(956.9999, 542.00006)
-scale = Vector2(1.5098039, 1.0858587)
+position = Vector2(0, -6.999993)
+scale = Vector2(1.3845041, 1.3)
 texture = ExtResource("6_3ovsr")
+centered = false
 
 [node name="Start_Button" type="Button" parent="." unique_id=595050800]
-offset_left = 238.0
-offset_top = 287.0
-offset_right = 1685.0
-offset_bottom = 458.0
+offset_left = 628.0
+offset_top = 394.0
+offset_right = 1349.0
+offset_bottom = 597.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ob46e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqeha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ebjn")
 
-[node name="How_to_Button" type="Button" parent="." unique_id=735555891]
-offset_left = 237.0
-offset_top = 486.0
-offset_right = 1684.0
-offset_bottom = 657.0
+[node name="how_to_button" type="Button" parent="." unique_id=1615512760]
+offset_left = 310.0
+offset_top = 634.0
+offset_right = 1645.0
+offset_bottom = 828.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ob46e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqeha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ebjn")
 
-[node name="Settings_Button" type="Button" parent="." unique_id=771763475]
-offset_left = 238.0
-offset_top = 681.0
-offset_right = 1685.0
-offset_bottom = 852.0
+[node name="exit_button" type="Button" parent="." unique_id=1340409953]
+offset_left = 737.0
+offset_top = 862.0
+offset_right = 1252.0
+offset_bottom = 1065.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ob46e")
-
-[node name="Exit_Button" type="Button" parent="." unique_id=1288811706]
-offset_left = 239.0
-offset_top = 876.0
-offset_right = 1686.0
-offset_bottom = 1047.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_ob46e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqeha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ebjn")
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="How_to_Button" to="." method="_on_how_to_pressed"]
-[connection signal="pressed" from="Settings_Button" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Exit_Button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="how_to_button" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_pressed"]

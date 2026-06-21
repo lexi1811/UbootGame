@@ -3,10 +3,30 @@
 [ext_resource type="Script" uid="uid://djowrg5e2ob1m" path="res://scenes/game_over/label_highscore.gd" id="7_3iia1"]
 [ext_resource type="Script" uid="uid://bdy8a2khrfhuy" path="res://scenes/game_over/restart.gd" id="7_3mpp1"]
 [ext_resource type="Texture2D" uid="uid://degjoccesbiy" path="res://assets/sprites/underwater_view/Hintergrundchen.png" id="7_tbth1"]
-[ext_resource type="Script" uid="uid://cmkkbbgybje5c" path="res://scenes/game_over/exit.gd" id="8_tbth1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evqqi"]
 font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtso4"]
+bg_color = Color(0.31260636, 0.31260636, 0.31260636, 0.45490196)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1tbv"]
+bg_color = Color(0.4862745, 0.4862745, 0.4862745, 0.45490196)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqjl0"]
+bg_color = Color(0.4880544, 0.48805398, 0.48805404, 0.45490196)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_hc246"]
 font_size = 60
@@ -23,41 +43,69 @@ color = Color(0.8, 0, 0, 0.54509807)
 
 [node name="Label_niederlage" type="Label" parent="ColorRect" unique_id=1821065747]
 layout_mode = 0
-offset_left = 670.0
+offset_left = 651.0
 offset_top = 198.0
-offset_right = 1312.0
+offset_right = 1420.0
 offset_bottom = 361.0
 text = "NIEDERLAGE 😪"
 label_settings = SubResource("LabelSettings_evqqi")
 
-[node name="Button" type="Button" parent="ColorRect" unique_id=2008447565]
+[node name="Restart_Button" type="Button" parent="ColorRect" unique_id=1811133333]
 layout_mode = 0
-offset_left = 754.0
-offset_top = 623.0
-offset_right = 1245.0
-offset_bottom = 728.0
-text = "Nochmal 🔥"
+offset_left = 678.0
+offset_top = 467.0
+offset_right = 1399.0
+offset_bottom = 670.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vtso4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p1tbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqjl0")
 script = ExtResource("7_3mpp1")
 
-[node name="Button2" type="Button" parent="ColorRect" unique_id=1153883817]
+[node name="restart" type="Label" parent="ColorRect/Restart_Button" unique_id=128134486]
 layout_mode = 0
-offset_left = 758.0
-offset_top = 772.0
-offset_right = 1249.0
-offset_bottom = 877.0
-text = "Schließen ❌"
-script = ExtResource("8_tbth1")
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 715.0
+offset_bottom = 191.0
+text = "Restart"
+label_settings = SubResource("LabelSettings_evqqi")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label_highscore" type="Label" parent="ColorRect" unique_id=289137638]
 layout_mode = 0
-offset_left = 704.0
+offset_left = 693.0
 offset_top = 344.0
-offset_right = 1387.0
+offset_right = 1376.0
 offset_bottom = 585.0
 text = "Highscore: "
 label_settings = SubResource("LabelSettings_hc246")
 horizontal_alignment = 1
 script = ExtResource("7_3iia1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ColorRect/Label_highscore" unique_id=1875634033]
+
+[node name="Start_Button2" type="Button" parent="ColorRect" unique_id=1107058411]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 688.0
+offset_right = 1397.0
+offset_bottom = 891.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vtso4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p1tbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqjl0")
+script = ExtResource("7_3mpp1")
+
+[node name="Exit" type="Label" parent="ColorRect/Start_Button2" unique_id=442291971]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 715.0
+offset_bottom = 191.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_evqqi")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="background2" type="Sprite2D" parent="." unique_id=168952527]
 scale = Vector2(0.48, 0.48)
