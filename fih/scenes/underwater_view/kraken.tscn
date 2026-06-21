@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dnde11lbudkt7"]
+
+[ext_resource type="Script" uid="uid://c3lie0vdn0jdw" path="res://scripts/underwater_view/kraken.gd" id="1_we8ea"]
+[ext_resource type="Texture2D" uid="uid://eyhes7d43ra2" path="res://assets/sprites/underwater_view/kraken.png" id="2_u161u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq11j"]
+size = Vector2(581.5, 969)
+
+[node name="kraken" type="CharacterBody2D" unique_id=159772635]
+script = ExtResource("1_we8ea")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=311060400]
+position = Vector2(-130, 484)
+scale = Vector2(0.6354166, 1.1057367)
+texture = ExtResource("2_u161u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194697126]
+position = Vector2(-126, 494)
+shape = SubResource("RectangleShape2D_dq11j")
