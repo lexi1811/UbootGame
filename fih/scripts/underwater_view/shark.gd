@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 400.0
 @export var wave_amplitude: float = 500.0
-@export var wave_frequency: float = 5.0
+@export var wave_frequency: float = 6.0
 
 var sonar_destroyed: bool = false
 var time_passed: float = 0.0
@@ -45,5 +45,5 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var hit_object = collision.get_collider()
-		if !hit_object.is_in_group("wale") && !hit_object.is_in_group("taurus") && !hit_object.is_in_group("walOffset"):
+		if !hit_object.is_in_group("wale") && !hit_object.is_in_group("taurus") && !hit_object.is_in_group("walOffset") && !hit_object.is_in_group("torpedo"):
 			queue_free()

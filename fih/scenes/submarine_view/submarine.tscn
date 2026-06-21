@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://c6cxcvsrpluan" path="res://assets/sprites/submarine_view/Iconchen_Herzchen.png" id="6_m8run"]
 [ext_resource type="Script" uid="uid://b0umpg83rpx4a" path="res://scenes/submarine_view/weapons.gd" id="7_aoagb"]
 [ext_resource type="AudioStream" uid="uid://d4hnei1usa7ud" path="res://assets/audio/music/the-buccaneers-haul.mp3" id="7_w8qwp"]
+[ext_resource type="Texture2D" uid="uid://cadrcsrv0xgiv" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_1.png" id="12_awcm0"]
+[ext_resource type="Texture2D" uid="uid://c2lvyoowyffqg" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_2.png" id="13_54e64"]
+[ext_resource type="Texture2D" uid="uid://c4epwivnbwvps" path="res://assets/sprites/underwater_view/Meowilein_Reparieren_3.png" id="14_qfsc6"]
 [ext_resource type="Script" uid="uid://cic24oeonfmp0" path="res://scenes/submarine_view/shild.gd" id="9_pi08h"]
 [ext_resource type="Script" uid="uid://bcxltcup3veek" path="res://scenes/submarine_view/hp_laptops.gd" id="11_8hytp"]
 [ext_resource type="Script" uid="uid://ckmpxm7nrqf06" path="res://scenes/submarine_view/engine.gd" id="13_tn44x"]
@@ -265,10 +268,15 @@ script = ExtResource("3_nosfk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1177419796]
 z_index = 2
-position = Vector2(345, 535)
+position = Vector2(381, 559)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("5_bfu6x")
+tex_idle = ExtResource("5_w8qwp")
+tex_repair_1 = ExtResource("12_awcm0")
+tex_repair_2 = ExtResource("13_54e64")
+tex_repair_3 = ExtResource("14_qfsc6")
+anim_speed = 0.13
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1316672258]
 position = Vector2(-12, -38.45996)

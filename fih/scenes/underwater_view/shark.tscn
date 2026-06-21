@@ -1,38 +1,24 @@
 [gd_scene format=3 uid="uid://bye0v7q7pbquo"]
 
 [ext_resource type="Script" uid="uid://bjfiiycufqvwr" path="res://scripts/underwater_view/shark.gd" id="1_7bkay"]
-[ext_resource type="Texture2D" uid="uid://cycnk6k0baihk" path="res://assets/sprites/underwater_view/very_evil_shark.png" id="2_ewdrt"]
+[ext_resource type="Texture2D" uid="uid://d2p6q525d2qc2" path="res://assets/sprites/underwater_view/haichen.png" id="2_7bkay"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewdrt"]
-radius = 19.208544
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a224e"]
+radius = 17.0
 height = 168.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7xc"]
-size = Vector2(41, 79)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3r7xc"]
-radius = 19.225113
-height = 157.02861
-
 [node name="shark" type="CharacterBody2D" unique_id=1754415973]
-position = Vector2(-4, -7)
+visibility_layer = 2
+position = Vector2(-7, 0)
 script = ExtResource("1_7bkay")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832719834]
-position = Vector2(-101.40625, 0.49999523)
-scale = Vector2(0.11965297, 0.13617608)
-texture = ExtResource("2_ewdrt")
+position = Vector2(-77.68014, -6)
+scale = Vector2(0.11051962, 0.1013159)
+texture = ExtResource("2_7bkay")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1570800993]
-position = Vector2(-113.99999, 3)
-rotation = 1.7802359
-shape = SubResource("CapsuleShape2D_ewdrt")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1931310040]
-position = Vector2(-30.5, -4.5)
-shape = SubResource("RectangleShape2D_3r7xc")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=697567113]
-position = Vector2(-115.00001, -19)
-rotation = 1.446878
-shape = SubResource("CapsuleShape2D_3r7xc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872184037]
+visibility_layer = 2
+position = Vector2(-92, 3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_a224e")
