@@ -218,8 +218,6 @@ z_index = 1
 position = Vector2(320, 536)
 
 [node name="system_destroyer" type="Timer" parent="." unique_id=1416006287]
-wait_time = 0.332
-autostart = true
 script = ExtResource("3_nosfk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1177419796]

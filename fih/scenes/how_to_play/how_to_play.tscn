@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://kj688qcv12h2"]
+
+[ext_resource type="Texture2D" uid="uid://degjoccesbiy" path="res://assets/sprites/underwater_view/Hintergrundchen.png" id="1_ogi4q"]
+[ext_resource type="Texture2D" uid="uid://cijkwb2a2k561" path="res://assets/sprites/underwater_view/Ubootchen.png" id="2_il0th"]
+[ext_resource type="PackedScene" uid="uid://053fcjjssby1" path="res://scenes/submarine_view/submarine.tscn" id="3_s3p86"]
+[ext_resource type="Texture2D" uid="uid://bavptgnag3wua" path="res://assets/sprites/underwater_view/Gegnerchen.png" id="4_6j0x8"]
+[ext_resource type="Texture2D" uid="uid://ddlud2ileav4" path="res://assets/sprites/underwater_view/GegnerchenOFFSET.png" id="5_blg4o"]
+[ext_resource type="Texture2D" uid="uid://b8ym3i4dg5gsh" path="res://assets/sprites/underwater_view/Hamburger wale.jpeg" id="6_fvcel"]
+[ext_resource type="Texture2D" uid="uid://ch6o07al1x5hx" path="res://assets/sprites/how_to/arrows.png" id="7_norpw"]
+[ext_resource type="Texture2D" uid="uid://ywey8sg0s4h4" path="res://assets/sprites/how_to/player1.png" id="8_qa35v"]
+[ext_resource type="Texture2D" uid="uid://dml256nd1iv06" path="res://assets/sprites/how_to/player2.png" id="9_luist"]
+[ext_resource type="Texture2D" uid="uid://b0tyeofwpnmie" path="res://assets/sprites/how_to/wasd.png" id="10_kqr44"]
+[ext_resource type="Texture2D" uid="uid://kn0b8wfiuo1a" path="res://assets/sprites/how_to/talk.png" id="11_wvmuj"]
+[ext_resource type="Script" uid="uid://dfshcu1dpekdb" path="res://scenes/how_to_play/submarine_how_to.gd" id="12_6j0x8"]
+[ext_resource type="Texture2D" uid="uid://cuu1rmor3engd" path="res://assets/sprites/how_to/talk arrow.png" id="12_il0th"]
+[ext_resource type="PackedScene" uid="uid://diac5q40bd3jm" path="res://scenes/underwater_view/taurus.tscn" id="13_fvcel"]
+[ext_resource type="Texture2D" uid="uid://d3jk8jw16hw2t" path="res://assets/sprites/underwater_view/shild.png" id="15_norpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blg4o"]
+size = Vector2(1443.1772, 425.74063)
+
+[node name="HowToPlay" type="Node2D" unique_id=1415228410]
+
+[node name="background2" type="Sprite2D" parent="." unique_id=743227621]
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_ogi4q")
+centered = false
+
+[node name="background3" type="Sprite2D" parent="." unique_id=1136444907]
+position = Vector2(1729, 0)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_ogi4q")
+centered = false
+
+[node name="Submarine" parent="." unique_id=1643673883 instance=ExtResource("3_s3p86")]
+
+[node name="Gegnerchen" type="Sprite2D" parent="." unique_id=290480671]
+position = Vector2(1107, 896)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_6j0x8")
+flip_h = true
+
+[node name="GegnerchenOffset" type="Sprite2D" parent="." unique_id=1751017024]
+position = Vector2(1757, 892)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_blg4o")
+flip_h = true
+
+[node name="HamburgerWale" type="Sprite2D" parent="." unique_id=1032726922]
+position = Vector2(1427, 887)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_fvcel")
+flip_h = true
+
+[node name="Arrows" type="Sprite2D" parent="." unique_id=2044742212]
+position = Vector2(1625, 353)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_norpw")
+
+[node name="Player1" type="Sprite2D" parent="." unique_id=605381807]
+position = Vector2(880, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_qa35v")
+
+[node name="Player2" type="Sprite2D" parent="." unique_id=674658416]
+position = Vector2(1488, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_luist")
+
+[node name="Wasd" type="Sprite2D" parent="." unique_id=105342593]
+position = Vector2(702.9999, 559)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_kqr44")
+
+[node name="Talk" type="Sprite2D" parent="." unique_id=937527679]
+position = Vector2(751, 170)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_wvmuj")
+
+[node name="TalkArrow" type="Sprite2D" parent="." unique_id=616946759]
+position = Vector2(493.99997, 72.99999)
+rotation = 0.3159046
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_il0th")
+
+[node name="submarine" type="Area2D" parent="." unique_id=625474061]
+z_index = 1
+position = Vector2(1166.0001, 160.99998)
+scale = Vector2(0.12056731, 0.28421056)
+script = ExtResource("12_6j0x8")
+taurus_scene = ExtResource("13_fvcel")
+
+[node name="Sprite2D" type="Sprite2D" parent="submarine" unique_id=1533102814]
+position = Vector2(273.70605, 7.0371094)
+scale = Vector2(1.2406498, 0.40452853)
+texture = ExtResource("2_il0th")
+
+[node name="CollisionSubmarine" type="CollisionShape2D" parent="submarine" unique_id=1822219765]
+position = Vector2(265.4121, 8.796387)
+shape = SubResource("RectangleShape2D_blg4o")
+
+[node name="Timer" type="Timer" parent="submarine" unique_id=926245463]
+
+[node name="ShieldSprite" type="Sprite2D" parent="submarine" unique_id=1266159333]
+position = Vector2(174.17656, 10.555664)
+scale = Vector2(1, 0.39973137)
+texture = ExtResource("15_norpw")
+
+[connection signal="timeout" from="submarine/Timer" to="submarine" method="_on_timer_timeout"]
