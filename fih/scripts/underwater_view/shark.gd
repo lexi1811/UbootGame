@@ -45,5 +45,5 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var hit_object = collision.get_collider()
-		if !hit_object.is_in_group("wale") && !hit_object.is_in_group("taurus"):
+		if !hit_object.is_in_group("wale") && !hit_object.is_in_group("taurus") && !hit_object.is_in_group("walOffset"):
 			queue_free()

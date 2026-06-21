@@ -7,8 +7,16 @@ var move_tween: Tween
 @export var taurus_scene: PackedScene
 var explo_scene_sub: PackedScene = preload("res://scenes/underwater_view/explosion.tscn")
 
-# Shield
+# Nodes
 @onready var shield_sprite: Sprite2D = $ShieldSprite
+
+@onready var propeller: Sprite2D = $Propeller
+@onready var bubble_particles: CPUParticles2D = $Bubbles
+var propeller_speed: float = 15.0 # Geschwindigkeit der Drehung
+var original_propeller_scale_y: float = 1.0
+
+# --- NEU: Zeit-Tracker für den 3D-Effekt ---
+var time_passed: float = 0.0
 
 var engine: bool = true
 var shield: bool = true
@@ -23,6 +31,8 @@ func _ready() -> void:
 	game_state.health_depleted.connect(_on_game_over)
 	
 	shield_sprite.visible = false
+	if propeller:
+		original_propeller_scale_y = propeller.scale.y
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -31,12 +41,20 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:	
 	#Debug
 	if Input.is_action_just_pressed("ui_end"):
-		#game_state.schummeln = !game_state.schummeln
-		game_state._destroy_system(global_enums.System.SONAR)
+		game_state.schummeln = !game_state.schummeln
 	
 	var vorherige_reihe = row
 	
 	if engine:
+		# --- KORRIGIERT: 3D-Trick statt flacher Rotation ---
+		if propeller:
+			time_passed += delta
+			var scale_y = sin(time_passed * abs(propeller_speed)) * original_propeller_scale_y
+			propeller.scale.y = scale_y
+			
+		if bubble_particles and not bubble_particles.emitting:
+			bubble_particles.emitting = true
+
 		if Input.is_action_just_pressed("ui_down"):
 			if row < 4:
 				row += 1	
@@ -44,26 +62,24 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_up"):
 			if row > 0:
 				row -= 1
+	else:
+		if bubble_particles and bubble_particles.emitting:
+			bubble_particles.emitting = false
 	
 	if shield:
 		if Input.is_action_just_pressed("ui_left"):
 			shieldActive = !shieldActive
 			print("Schild aktiv: ", shieldActive)
-			
 			shield_sprite.visible = shieldActive
 
-	# REPARIERT: Tween-Erstellung komplett korrigiert!
 	if engine and row != vorherige_reihe:
 		var ziel_y = row * 180 + 200
 		
-		# Alten Tween stoppen, falls er noch läuft
 		if move_tween and move_tween.is_running():
 			move_tween.kill()
 			
-		# Neuen Tween sauber erstellen (Das hat gefehlt!)
 		move_tween = create_tween()
 		
-		# Den Bewegungseffekt außerhalb der "is_running"-Abfrage ausführen
 		move_tween.tween_property(self, "position:y", ziel_y, 0.3)\
 			.set_trans(Tween.TRANS_CUBIC)\
 			.set_ease(Tween.EASE_OUT)
